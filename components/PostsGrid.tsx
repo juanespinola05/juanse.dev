@@ -7,12 +7,12 @@ const PostsGrid: FunctionalComponent = ({ children }) => {
   const cssGrid = tw(
     css({
       '& article:first-child h2': {
-        fontSize: '32px',
+        '@apply': 'md:text-[32px]',
       },
     }),
   );
   return (
-    <div class={`grid grid-cols(sm:1 md:3) gap-10 ${cssGrid}`}>
+    <div class={`grid grid-cols(1 md:3) gap-10 ${cssGrid}`}>
       {children}
     </div>
   );
