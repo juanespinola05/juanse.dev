@@ -6,6 +6,9 @@ export default {
         darkBlue: '#010137',
         pink: '#E71E7C',
       },
+      fontFamily: {
+        'oswald': ['Oswald', 'Helvetica', 'sans-serif'],
+      },
     },
   },
 };
