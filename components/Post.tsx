@@ -1,6 +1,6 @@
-import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index';
+import { FunctionalComponent } from 'preact';
 import Title from './Title.tsx';
-import IconClock from 'https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/clock.tsx';
+import IconClock from 'tabler-icon/clock.tsx';
 import Text from './Text.tsx';
 import { css } from 'twind/css';
 import { tw } from 'twind';

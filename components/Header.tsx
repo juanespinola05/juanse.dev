@@ -1,4 +1,4 @@
-import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index';
+import { FunctionalComponent } from 'preact';
 import Container from './Container.tsx';
 import { Logo } from './Logo.tsx';
 import Navbar from './Navbar.tsx';

@@ -1,4 +1,4 @@
-import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index';
+import { FunctionalComponent } from 'preact';
 
 const Page: FunctionalComponent = ({ children }) => {
   return (
