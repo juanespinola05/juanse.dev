@@ -9,6 +9,7 @@
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
     "tabler-icon": "https://deno.land/x/tabler_icons_tsx@0.0.2",
-    "tabler-icon/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/"
+    "tabler-icon/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/",
+    "deno-gfm": "https://deno.land/x/gfm@0.1.26/mod.ts"
   }
 }
