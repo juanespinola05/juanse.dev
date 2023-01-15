@@ -5,6 +5,7 @@ import Text from './Text.tsx';
 import { css } from 'twind/css';
 import { tw } from 'twind';
 import { Post } from '../types/posts.d.ts';
+import DateText from './DateText.tsx';
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
@@ -17,9 +18,6 @@ const Post: FunctionalComponent<PostComponentProps> = ({
   tags,
   title,
 }) => {
-  const formattedDate = new Date(date).toLocaleDateString('es', {
-    dateStyle: 'long',
-  });
   const hoverCss = tw(css({
     '&:hover img': {
       transform: 'scale(1.1)',
@@ -45,9 +43,7 @@ const Post: FunctionalComponent<PostComponentProps> = ({
         <Title size='lg'>
           {title}
         </Title>
-        <Text size='xs' className='font-bold'>
-          <time>{formattedDate}</time>
-        </Text>
+        <DateText date={date} />
         <ul class='flex gap-2'>
           {tags.map((tag) => (
             <li key={tag}>
