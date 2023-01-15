@@ -42,12 +42,22 @@ export default function Home(props: PageProps<{ posts: Post[] }>) {
         <Header />
         <div class='mt-12'>
           <Container>
-            <Title size='5xl'>LATEST</Title>
-            <br />
-            {posts.map((post) => <p key={post.title}>{post.title}</p>)}
-            <br />
+            <div class='my-12'>
+              <Title size='5xl'>LATEST</Title>
+            </div>
             <PostsGrid>
-              {posts.map((post) => <PostComponent {...post} />)}
+              {posts.filter((_, i) => i < 4).map((post) => (
+                <PostComponent {...post} />
+              ))}
+            </PostsGrid>
+            <hr class='border-b-2 border-gray-600 mt-12' />
+            <div class='my-12'>
+              <Title size='5xl'>JAVASCRIPT</Title>
+            </div>
+            <PostsGrid variant='reverse'>
+              {posts.filter((post, i) =>
+                post.tags.includes('javascript') && i < 4
+              ).map((post) => <PostComponent {...post} />)}
             </PostsGrid>
           </Container>
         </div>
