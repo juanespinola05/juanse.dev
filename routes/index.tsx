@@ -1,9 +1,7 @@
-import { Head } from '$fresh/runtime.ts';
 import { Handlers, PageProps } from '$fresh/server.ts';
+import BaseBody from '../components/BaseBody.tsx';
+import BaseHead from '../components/BaseHead.tsx';
 import Container from '../components/Container.tsx';
-import Footer from '../components/Footer.tsx';
-import Header from '../components/Header.tsx';
-import Page from '../components/Page.tsx';
 import PostComponent from '../components/Post.tsx';
 import PostsGrid from '../components/PostsGrid.tsx';
 import Title from '../components/Title.tsx';
@@ -22,25 +20,13 @@ export const handler: Handlers = {
 export default function Home(props: PageProps<{ posts: Post[] }>) {
   const { data } = props;
   const { posts } = data;
-  console.log(posts);
 
   return (
     <>
-      <Head>
-        <title>juanse</title>
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-          crossOrigin='true'
-        />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap'
-          rel='stylesheet'
-        />
-      </Head>
-      <Page>
-        <Header />
+      <BaseHead>
+        <title>juanse.dev</title>
+      </BaseHead>
+      <BaseBody>
         <div class='mt-12'>
           <Container>
             <div class='my-12'>
@@ -61,9 +47,8 @@ export default function Home(props: PageProps<{ posts: Post[] }>) {
               ).map((post) => <PostComponent {...post} />)}
             </PostsGrid>
           </Container>
-          <Footer />
         </div>
-      </Page>
+      </BaseBody>
     </>
   );
 }
