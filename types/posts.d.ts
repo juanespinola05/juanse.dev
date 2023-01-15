@@ -6,7 +6,7 @@ export interface Post {
   date: Date;
   readingTime: string;
   tags: string[];
-  imageUrl: string[];
+  imageUrl: string;
 }
 
 export interface PostFrontMatter extends Omit<Post, 'body' | 'id'> {}
