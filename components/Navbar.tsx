@@ -17,11 +17,15 @@ const routes = [
     name: 'About',
     path: '/about',
   },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
 ];
 
 const Navbar: FunctionalComponent = () => {
   return (
-    <nav class='border-b-2 border-gray-600 p-2'>
+    <nav class='border(b-2 [rgba(255,255,255,0.5)]) py-2'>
       <ul class='flex gap-4'>
         {routes.map(({ name, path }) => (
           <li key={path}>
