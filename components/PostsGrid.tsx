@@ -14,14 +14,13 @@ interface PostGridProps {
 const PostsGrid: FunctionalComponent<PostGridProps> = (
   { children, variant = 'default' },
 ) => {
-  // Modify first post title size
   const cssGrid = tw(
     css({
       '& a:first-child h2': {
         '@apply': 'md:text-[32px]',
       },
       '& a:first-child div:nth-child(2)': {
-        order: gridVariants[variant],
+        '@apply': `md:order-[${gridVariants[variant]}]`,
       },
     }),
   );
