@@ -6,7 +6,7 @@ const PostsGrid: FunctionalComponent = ({ children }) => {
   // Modify first post title size
   const cssGrid = tw(
     css({
-      '& article:first-child h2': {
+      '& a:first-child h2': {
         '@apply': 'md:text-[32px]',
       },
     }),

@@ -4,14 +4,27 @@ import IconClock from 'tabler-icon/clock.tsx';
 import Text from './Text.tsx';
 import { css } from 'twind/css';
 import { tw } from 'twind';
+import { Post } from '../types/posts.d.ts';
 
-const randomNumber = () => {
-  return Math.floor(Math.random() * 200);
-};
+interface PostComponentProps extends Omit<Post, 'body'> {}
 
-const Post: FunctionalComponent = () => {
+const Post: FunctionalComponent<PostComponentProps> = ({
+  date,
+  excerpt,
+  id,
+  imageUrl,
+  readingTime,
+  tags,
+  title,
+}) => {
+  const formattedDate = new Date(date).toLocaleDateString('es', {
+    dateStyle: 'long',
+  });
   return (
-    <article class='grid gap-4 grid-cols(1 sm:2 md:1 md:first-child:2) col-span(1 md:first-child:3)'>
+    <a
+      href={`/blog/${id}`}
+      class='grid gap-4 place-content-start grid-cols(1 sm:2 md:1 md:first-child:2) col-span(1 md:first-child:3)'
+    >
       <div
         class={`w-full rounded-xl bg-darkBlue ${
           tw(css({ 'aspect-ratio': '16/9' }))
@@ -19,40 +32,33 @@ const Post: FunctionalComponent = () => {
       >
         <img
           class='w-full h-full bg-cover bg-center rounded-xl'
-          src={`https://unsplash.it/id/${randomNumber()}/500/300`}
+          src={imageUrl}
           alt=''
         />
       </div>
-      <div class='flex flex-col justify-between gap-2'>
+      <div class='flex flex-col justify-around gap-2'>
         <Title size='lg'>
-          How I created a chess subscription application.
+          {title}
         </Title>
         <Text size='xs' className='font-bold'>
-          <time>12 July 2022</time>
+          <time>{formattedDate}</time>
         </Text>
         <ul class='flex gap-2'>
-          <li>
-            <Text size='xs'>#javascript</Text>
-          </li>
-          <li>
-            <Text size='xs'>#javascript</Text>
-          </li>
-          <li>
-            <Text size='xs'>#javascript</Text>
-          </li>
+          {tags.map((tag) => (
+            <li key={tag}>
+              <Text size='xs'>#{tag}</Text>
+            </li>
+          ))}
         </ul>
         <Text className='font-light'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, quos
-          aliquam aperiam dolores ratione numquam nemo unde non. Pariatur
-          recusandae aliquam, omnis deserunt mollitia ipsum ullam iure.
-          Dignissimos, minima explicabo!
+          {excerpt}
         </Text>
         <div class='flex items-center gap-1'>
           <IconClock size={20} />
-          <Text size='xs'>5-7 minutes read</Text>
+          <Text size='xs'>{readingTime}</Text>
         </div>
       </div>
-    </article>
+    </a>
   );
 };
 
