@@ -5,8 +5,17 @@ export interface Post {
   body: string;
   date: Date;
   readingTime: string;
-  tags: string[];
+  tags: TagType[];
   imageUrl: string;
 }
+
+export type TagType =
+  | 'javascript'
+  | 'typescript'
+  | 'CSS'
+  | 'deno'
+  | 'nodejs'
+  | 'reactjs'
+  | 'vite';
 
 export interface PostFrontMatter extends Omit<Post, 'body' | 'id'> {}

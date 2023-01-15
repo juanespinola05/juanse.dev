@@ -6,6 +6,7 @@ import { css } from 'twind/css';
 import { tw } from 'twind';
 import { Post } from '../types/posts.d.ts';
 import DateText from './DateText.tsx';
+import TagList from './TagList.tsx';
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
@@ -44,13 +45,7 @@ const Post: FunctionalComponent<PostComponentProps> = ({
           {title}
         </Title>
         <DateText date={date} />
-        <ul class='flex gap-2'>
-          {tags.map((tag) => (
-            <li key={tag}>
-              <Text size='xs'>#{tag}</Text>
-            </li>
-          ))}
-        </ul>
+        <TagList tags={tags} />
         <Text className='font-light'>
           {excerpt}
         </Text>
