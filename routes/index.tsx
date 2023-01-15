@@ -1,6 +1,7 @@
 import { Head } from '$fresh/runtime.ts';
 import { Handlers, PageProps } from '$fresh/server.ts';
 import Container from '../components/Container.tsx';
+import Footer from '../components/Footer.tsx';
 import Header from '../components/Header.tsx';
 import Page from '../components/Page.tsx';
 import PostComponent from '../components/Post.tsx';
@@ -60,6 +61,7 @@ export default function Home(props: PageProps<{ posts: Post[] }>) {
               ).map((post) => <PostComponent {...post} />)}
             </PostsGrid>
           </Container>
+          <Footer />
         </div>
       </Page>
     </>
