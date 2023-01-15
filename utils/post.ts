@@ -31,5 +31,3 @@ export const loadPosts = async (): Promise<Post[]> => {
 
   return posts;
 };
-
-console.log(await loadPosts());
