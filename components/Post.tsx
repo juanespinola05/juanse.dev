@@ -20,10 +20,15 @@ const Post: FunctionalComponent<PostComponentProps> = ({
   const formattedDate = new Date(date).toLocaleDateString('es', {
     dateStyle: 'long',
   });
+  const hoverCss = tw(css({
+    '&:hover img': {
+      transform: 'scale(1.1)',
+    },
+  }));
   return (
     <a
       href={`/blog/${id}`}
-      class='grid gap-4 place-content-start grid-cols(1 sm:2 md:1 md:first-child:2) col-span(1 md:first-child:3)'
+      class={`grid gap(y-2 x-2 sm:y-2 md:x-10 md:y-2) place-content-start grid-cols(1 sm:2 md:1 md:first-child:2) col-span(1 md:first-child:3) ${hoverCss}`}
     >
       <div
         class={`w-full rounded-xl bg-darkBlue ${
@@ -31,12 +36,12 @@ const Post: FunctionalComponent<PostComponentProps> = ({
         }`}
       >
         <img
-          class='w-full h-full bg-cover bg-center rounded-xl'
+          class='w-full h-full bg-cover bg-center rounded-xl shadow-xl transition-transform'
           src={imageUrl}
           alt=''
         />
       </div>
-      <div class='flex flex-col justify-around gap-2'>
+      <div class='flex flex-col justify-around gap-2 max-w-[415px]'>
         <Title size='lg'>
           {title}
         </Title>
