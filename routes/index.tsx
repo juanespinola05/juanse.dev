@@ -5,21 +5,29 @@ import Container from '../components/Container.tsx';
 import PostComponent from '../components/Post.tsx';
 import PostsGrid from '../components/PostsGrid.tsx';
 import Title from '../components/Title.tsx';
+import Video from '../components/Video.tsx';
+import VideosGrid from '../components/VideosGrid.tsx';
+import { getLatestVideos } from '../services/youtubev3.ts';
 import { Post } from '../types/posts.d.ts';
+import { VideoDetails } from '../types/videos.d.ts';
 import { loadPosts } from '../utils/post.ts';
 
 export const handler: Handlers = {
-  async GET(request, context) {
-    console.log('asd');
-
+  async GET(__, context) {
+    const videos = await getLatestVideos(10);
     const posts = await loadPosts();
-    return context.render({ posts });
+    return context.render({ posts, videos });
   },
 };
 
-export default function Home(props: PageProps<{ posts: Post[] }>) {
+interface HomeProps {
+  posts: Post[];
+  videos: VideoDetails[];
+}
+
+export default function Home(props: PageProps<HomeProps>) {
   const { data } = props;
-  const { posts } = data;
+  const { posts, videos } = data;
 
   return (
     <>
@@ -46,6 +54,14 @@ export default function Home(props: PageProps<{ posts: Post[] }>) {
                 post.tags.includes('javascript') && i < 4
               ).map((post) => <PostComponent {...post} />)}
             </PostsGrid>
+            <div className='my-12'>
+              <Title size='5xl'>VIDEOS</Title>
+            </div>
+            <VideosGrid>
+              {videos.filter((_, i) => i < 4).map((video) => (
+                <Video {...video} />
+              ))}
+            </VideosGrid>
           </Container>
         </div>
       </BaseBody>
