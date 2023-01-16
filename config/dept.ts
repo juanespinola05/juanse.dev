@@ -1,3 +1,5 @@
-import { config as dotEnvConfig } from 'https://deno.land/x/dotenv@v1.0.1/mod.ts';
+import { configAsync as dotEnvConfig } from 'https://deno.land/x/dotenv@v3.2.0/mod.ts';
+
+dotEnvConfig({ export: true });
 
 export { dotEnvConfig };

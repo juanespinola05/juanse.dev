@@ -1,7 +1,7 @@
 import { dotEnvConfig } from '../config/dept.ts';
 import { VideoDetails, YoutubeAPIResponse } from '../types/videos.d.ts';
 
-dotEnvConfig({ export: true });
+await dotEnvConfig({ export: true });
 
 export const getLatestVideos = async (
   maxResults = 4,
@@ -12,6 +12,7 @@ export const getLatestVideos = async (
     order: 'date',
     maxResults: maxResults,
   };
+
   const paramString = Object.entries(params)
     .map(([key, value]) => {
       return `${key}=${value}`;
