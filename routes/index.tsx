@@ -38,7 +38,7 @@ export default function Home(props: PageProps<HomeProps>) {
         <div class='mt-12'>
           <Container>
             <div class='my-12'>
-              <Title size='5xl'>LATEST</Title>
+              <Title size='5xl'>BLOG</Title>
             </div>
             <PostsGrid>
               {posts.filter((_, i) => i < 4).map((post) => (

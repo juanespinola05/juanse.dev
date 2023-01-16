@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 
 const routes = [
   {
-    name: 'Home',
+    name: 'Inicio',
     path: '/',
   },
   {
@@ -14,12 +14,12 @@ const routes = [
     path: '/videos',
   },
   {
-    name: 'About',
-    path: '/about',
+    name: 'Sobre mi',
+    path: '/sobre-mi',
   },
   {
-    name: 'Contact',
-    path: '/contact',
+    name: 'Contacto',
+    path: '/contacto',
   },
 ];
 
