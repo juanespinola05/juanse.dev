@@ -7,7 +7,6 @@ import { tw } from 'twind';
 import { Post } from '../types/posts.d.ts';
 import DateText from './DateText.tsx';
 import TagList from './TagList.tsx';
-import Image from '../islands/Image.tsx';
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
@@ -35,9 +34,10 @@ const Post: FunctionalComponent<PostComponentProps> = ({
       <div
         class={`w-full rounded-xl bg-darkBlue ${aspectRatio}`}
       >
-        <Image
+        <img
           src={imageUrl}
           alt={title}
+          loading='lazy'
           className={`${aspectRatio} w-full h-full bg-cover bg-center rounded-xl shadow-xl transition-transform`}
         />
       </div>

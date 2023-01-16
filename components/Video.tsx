@@ -3,7 +3,6 @@ import { css } from 'twind/css';
 import { tw } from 'twind';
 import { VideoDetails } from '../types/videos.d.ts';
 import DateText from './DateText.tsx';
-import Image from '../islands/Image.tsx';
 
 const Video: FunctionalComponent<VideoDetails> = (
   { thumbnail, title, date, id },
@@ -28,9 +27,10 @@ const Video: FunctionalComponent<VideoDetails> = (
         <DateText date={date} />
       </span>
       <div>
-        <Image
+        <img
           className={`${aspectRatio} w-full max-w-[480px] object-cover object-center`}
           src={thumbnail}
+          loading='lazy'
           alt={title}
         />
       </div>
