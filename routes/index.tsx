@@ -32,7 +32,7 @@ export default function Home(props: PageProps<HomeProps>) {
   return (
     <>
       <BaseHead>
-        <title>juanse.dev</title>
+        <title>Juanse | Programación y Desarrollo Web</title>
       </BaseHead>
       <BaseBody>
         <div class='mt-12'>
