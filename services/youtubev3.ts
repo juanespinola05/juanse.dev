@@ -3,12 +3,14 @@ import { VideoDetails, YoutubeAPIResponse } from '../types/videos.d.ts';
 
 dotEnvConfig({ export: true });
 
-export const getLatestVideos = async (): Promise<VideoDetails[]> => {
+export const getLatestVideos = async (
+  maxResults = 4,
+): Promise<VideoDetails[]> => {
   const params = {
     channelId: Deno.env.get('YOUTUBE_CHANNEL_ID'),
     part: 'snippet,id',
     order: 'date',
-    maxResults: '5',
+    maxResults: maxResults,
   };
   const paramString = Object.entries(params)
     .map(([key, value]) => {
@@ -27,11 +29,16 @@ export const getLatestVideos = async (): Promise<VideoDetails[]> => {
   try {
     const response = await fetch(requestUrl, options);
     const data: YoutubeAPIResponse = await response.json();
-    return data.items.map((e) => ({
-      thumbnail: e.snippet.thumbnails.medium.url,
+    const filteredVideos = data.items.filter((video) =>
+      video.id.kind.endsWith('video')
+    );
+    const details = filteredVideos.map((e) => ({
+      thumbnail: e.snippet.thumbnails.high.url,
       title: e.snippet.title,
-      date: new Date(),
+      date: e.snippet.publishedAt,
+      id: e.id.videoId,
     }));
+    return details;
   } catch {
     return [];
   }
