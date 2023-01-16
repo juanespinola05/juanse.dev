@@ -7,7 +7,7 @@ tags:
   - javascript
   - vite
   - CSS
-imageUrl: 'https://unsplash.it/600/400'
+imageUrl: 'https://unsplash.it/id/123/600/400'
 ---
 
 ### Holis
