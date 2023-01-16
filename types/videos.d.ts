@@ -1,17 +1,23 @@
 export interface VideoDetails {
+  id: string;
   thumbnail: string;
   title: string;
   date: Date;
 }
 
 export interface VideoFromAPI {
+  id: {
+    videoId: string;
+    kind: string;
+  };
   snippet: {
     title: string;
     thumbnails: {
-      medium: {
+      high: {
         url: string;
       };
     };
+    publishedAt: Date;
   };
 }
 
