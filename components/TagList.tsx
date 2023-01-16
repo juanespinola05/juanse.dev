@@ -14,7 +14,7 @@ const TagList: FunctionalComponent<TagListProps> = ({ tags }) => {
         const color = colors[tag] || '#FFF';
         return (
           <li key={tag}>
-            <Text size='xs' className={`text-[${color}] font-bold`}>
+            <Text size='sm' className={`text-[${color}] font-bold`}>
               #{tag}
             </Text>
           </li>
