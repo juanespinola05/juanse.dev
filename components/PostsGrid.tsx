@@ -16,8 +16,8 @@ const PostsGrid: FunctionalComponent<PostGridProps> = (
 ) => {
   const cssGrid = tw(
     css({
-      '& a:first-child h2': {
-        '@apply': 'md:text-[32px]',
+      '& a:first-child h2, & a:last-child h2': {
+        '@apply': 'md:text-[25px] lg:text-[32px]',
       },
       '& a:first-child div:nth-child(2)': {
         '@apply': `md:order-[${gridVariants[variant]}]`,
@@ -25,7 +25,7 @@ const PostsGrid: FunctionalComponent<PostGridProps> = (
     }),
   );
   return (
-    <div class={`grid grid-cols(1 md:3) gap(4 md:x-10 md:y-8) ${cssGrid}`}>
+    <div class={`grid grid-cols(1 md:2 lg:3) gap(4 md:x-10 md:y-8) ${cssGrid}`}>
       {children}
     </div>
   );

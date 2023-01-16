@@ -19,15 +19,16 @@ const Post: FunctionalComponent<PostComponentProps> = ({
   tags,
   title,
 }) => {
-  const hoverCss = tw(css({
-    '&:hover img': {
-      transform: 'scale(1.05)',
-    },
-  }));
+  const postStyles = tw`grid
+    gap(y-2 x-2 sm:y-2 md:x-10 md:y-2)
+    grid-cols(1 sm:2 md:1 md:first-child:2 md:last-child:2 lg:last-child:1)
+    col-span(1 md:first-child:2 md:last-child:2 lg:first-child:3 lg:last-child:1)
+    auto-rows-min
+  `;
   return (
     <a
       href={`/blog/${id}`}
-      class={`grid gap(y-2 x-2 sm:y-2 md:x-10 md:y-2) place-content-start grid-cols(1 sm:2 md:1 md:first-child:2) col-span(1 md:first-child:3) ${hoverCss}`}
+      class={postStyles}
     >
       <div
         class={`w-full rounded-xl bg-darkBlue ${
