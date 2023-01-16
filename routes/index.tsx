@@ -34,7 +34,7 @@ export default function Home(props: PageProps<HomeProps>) {
       <BaseHead>
         <title>Juanse | Programación y Desarrollo Web</title>
       </BaseHead>
-      <BaseBody>
+      <BaseBody pathname='/'>
         <div class='mt-12'>
           <Container>
             <div class='my-12'>
