@@ -3,11 +3,13 @@ import { css } from 'twind/css';
 import { tw } from 'twind';
 import { VideoDetails } from '../types/videos.d.ts';
 import DateText from './DateText.tsx';
+import Image from '../islands/Image.tsx';
 
 const Video: FunctionalComponent<VideoDetails> = (
   { thumbnail, title, date, id },
 ) => {
   const videoUrl = 'https://youtube.com/watch?v=' + id;
+  const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }));
   return (
     <a
       href={videoUrl}
@@ -17,19 +19,17 @@ const Video: FunctionalComponent<VideoDetails> = (
       class={`${
         tw(css({
           '&:hover span': {
-            top: '5px',
+            top: '0',
           },
         }))
       } w-full max-w-[480px] relative rounded-2xl bg-[rgba(255,255,255,0.1)] overflow-hidden transition-transform hover:scale-105`}
     >
-      <span class='transition-all absolute p-2 rounded-2xl bg-pink text-white right-[5px] top-[-60px]'>
+      <span class='transition-all absolute py-1 px-2 rounded-bl-2xl bg-pink text-white right-0 top-[-60px]'>
         <DateText date={date} />
       </span>
       <div>
-        <img
-          class={`${
-            tw(css({ 'aspect-ratio': '16/9' }))
-          } w-full max-w-[480px] object-cover object-center`}
+        <Image
+          className={`${aspectRatio} w-full max-w-[480px] object-cover object-center`}
           src={thumbnail}
           alt={title}
         />

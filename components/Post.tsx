@@ -7,6 +7,7 @@ import { tw } from 'twind';
 import { Post } from '../types/posts.d.ts';
 import DateText from './DateText.tsx';
 import TagList from './TagList.tsx';
+import Image from '../islands/Image.tsx';
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
@@ -25,27 +26,26 @@ const Post: FunctionalComponent<PostComponentProps> = ({
     col-span(1 md:first-child:2 md:last-child:2 lg:first-child:3 lg:last-child:1)
     auto-rows-min
   `;
+  const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }));
   return (
     <a
       href={`/blog/${id}`}
       class={postStyles}
     >
       <div
-        class={`w-full rounded-xl bg-darkBlue ${
-          tw(css({ 'aspect-ratio': '16/9' }))
-        }`}
+        class={`w-full rounded-xl bg-darkBlue ${aspectRatio}`}
       >
-        <img
-          class='w-full h-full bg-cover bg-center rounded-xl shadow-xl transition-transform'
+        <Image
           src={imageUrl}
-          alt=''
+          alt={title}
+          className={`${aspectRatio} w-full h-full bg-cover bg-center rounded-xl shadow-xl transition-transform`}
         />
       </div>
       <div class='flex flex-col justify-around gap-2 max-w-[415px]'>
         <Title size='lg'>
           {title}
         </Title>
-        <DateText date={date} />
+        <DateText date={date} className='font-bold' />
         <TagList tags={tags} />
         <Text className='font-light'>
           {excerpt}
