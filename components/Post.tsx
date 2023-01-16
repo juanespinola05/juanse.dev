@@ -45,6 +45,7 @@ const Post: FunctionalComponent<PostComponentProps> = ({
         <Title size='lg'>
           {title}
         </Title>
+        <DateText date={date} className='font-bold order-3' />
         <TagList tags={tags} />
         <div data-type='excerpt'>
           <Text className='font-light'>
