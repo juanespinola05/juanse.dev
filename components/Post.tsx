@@ -45,14 +45,18 @@ const Post: FunctionalComponent<PostComponentProps> = ({
         <Title size='lg'>
           {title}
         </Title>
-        <DateText date={date} className='font-bold' />
         <TagList tags={tags} />
-        <Text className='font-light'>
-          {excerpt}
-        </Text>
-        <div class='flex items-center gap-1'>
-          <IconClock size={20} />
-          <Text size='xs'>{readingTime}</Text>
+        <div data-type='excerpt'>
+          <Text className='font-light'>
+            {excerpt}
+          </Text>
+        </div>
+        <div className='flex justify-between'>
+          <div class='flex items-center gap-1'>
+            <IconClock size={20} />
+            <Text size='xs'>{readingTime}</Text>
+          </div>
+          <DateText date={date} className='font-bold' />
         </div>
       </div>
     </a>

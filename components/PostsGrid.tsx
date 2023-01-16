@@ -19,6 +19,10 @@ const PostsGrid: FunctionalComponent<PostGridProps> = (
       '& a:first-child h2, & a:last-child h2': {
         '@apply': 'md:text-[25px] lg:text-[32px]',
       },
+      '& a:first-child [data-type="excerpt"] p, &a:last-child [data-type="excerpt"] p':
+        {
+          '@apply': 'lg:text-base',
+        },
       '& a:first-child div:nth-child(2)': {
         '@apply': `md:order-[${gridVariants[variant]}]`,
       },
