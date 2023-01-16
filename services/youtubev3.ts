@@ -1,4 +1,5 @@
 import { dotEnvConfig } from '../config/dept.ts';
+import { YoutubeAPIResponse } from '../types/videos.d.ts';
 
 dotEnvConfig({ export: true });
 

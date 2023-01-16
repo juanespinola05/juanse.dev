@@ -1,4 +1,4 @@
-interface VideoFromAPI {
+export interface VideoFromAPI {
   snippet: {
     title: string;
     thumbnails: {
@@ -9,6 +9,6 @@ interface VideoFromAPI {
   };
 }
 
-interface YoutubeAPIResponse {
+export interface YoutubeAPIResponse {
   items: VideoFromAPI[];
 }
