@@ -17,7 +17,13 @@ const PostsGrid: FunctionalComponent<PostGridProps> = (
   const cssGrid = tw(
     css({
       '& a:first-child h2, & a:last-child h2': {
-        '@apply': 'md:text-[25px] lg:text-[32px]',
+        '@apply': 'md:text-[25px]',
+      },
+      '& a:first-child h2': {
+        '@apply': 'lg:text-[32px]',
+      },
+      '& a:last-child h2': {
+        '@apply': 'lg:text-lg',
       },
       '& a:first-child [data-type="excerpt"] p, &a:last-child [data-type="excerpt"] p':
         {
