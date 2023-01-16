@@ -1,7 +1,7 @@
-// import { dotEnvConfig } from '../config/dept.ts';
+import { dotEnvConfig } from '../config/dept.ts';
 import { VideoDetails, YoutubeAPIResponse } from '../types/videos.d.ts';
 
-// dotEnvConfig({ export: true });
+dotEnvConfig({ export: true });
 
 export const getLatestVideos = async (
   maxResults = 4,
@@ -39,7 +39,8 @@ export const getLatestVideos = async (
       id: e.id.videoId,
     }));
     return details;
-  } catch {
+  } catch (error) {
+    console.log(error);
     return [];
   }
 };

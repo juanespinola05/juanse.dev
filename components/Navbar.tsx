@@ -29,7 +29,7 @@ const Navbar: FunctionalComponent = () => {
       <ul class='flex gap-4'>
         {routes.map(({ name, path }) => (
           <li key={path}>
-            <a href={path}>{name}</a>
+            <a href={path} class='text-xl'>{name}</a>
           </li>
         ))}
       </ul>
