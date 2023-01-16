@@ -1,9 +1,9 @@
 import { dotEnvConfig } from '../config/dept.ts';
-import { YoutubeAPIResponse } from '../types/videos.d.ts';
+import { VideoDetails, YoutubeAPIResponse } from '../types/videos.d.ts';
 
 dotEnvConfig({ export: true });
 
-export const getLatestVideos = async () => {
+export const getLatestVideos = async (): Promise<VideoDetails[]> => {
   const params = {
     channelId: Deno.env.get('YOUTUBE_CHANNEL_ID'),
     part: 'snippet,id',
@@ -22,11 +22,17 @@ export const getLatestVideos = async () => {
     },
   };
 
-  const response = await fetch(
-    `https://youtube-v31.p.rapidapi.com/search?${paramString}`,
-    options,
-  );
+  const requestUrl = `https://youtube-v31.p.rapidapi.com/search?${paramString}`;
 
-  const data: YoutubeAPIResponse = await response.json();
-  return data.items.map((e) => e.snippet.thumbnails.medium.url);
+  try {
+    const response = await fetch(requestUrl, options);
+    const data: YoutubeAPIResponse = await response.json();
+    return data.items.map((e) => ({
+      thumbnail: e.snippet.thumbnails.medium.url,
+      title: e.snippet.title,
+      date: new Date(),
+    }));
+  } catch {
+    return [];
+  }
 };
