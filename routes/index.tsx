@@ -57,12 +57,13 @@ export default function Home(props: PageProps<HomeProps>) {
             <hr class='border-b-2 border-gray-600 mt-12' />
             <div className='my-12'>
               <Title size='5xl'>VIDEOS</Title>
+              <div className='mt-12'></div>
+              <VideosGrid>
+                {videos.filter((_, i) => i < 4).map((video) => (
+                  <Video {...video} />
+                ))}
+              </VideosGrid>
             </div>
-            <VideosGrid>
-              {videos.filter((_, i) => i < 4).map((video) => (
-                <Video {...video} />
-              ))}
-            </VideosGrid>
           </Container>
         </div>
       </BaseBody>

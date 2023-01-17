@@ -3,7 +3,8 @@ import { tw } from 'twind';
 import { css } from 'twind/css';
 
 const Page: FunctionalComponent = ({ children }) => {
-  const backgroundCSS = tw(css({
+  const cssRules = tw(css({
+    'grid-template-rows': '125px auto 140px',
     background: 'linear-gradient(45deg, #E7227E, #01011d, #010137)',
     backgroundSize: '400% 400%',
     animation: 'gradient 15s ease infinite',
@@ -20,7 +21,9 @@ const Page: FunctionalComponent = ({ children }) => {
     },
   }));
   return (
-    <div class={`min-h-screen ${backgroundCSS} text-white font-oswald`}>
+    <div
+      class={`min-h-screen ${cssRules} text-white font-oswald grid`}
+    >
       {children}
     </div>
   );

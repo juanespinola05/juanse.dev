@@ -5,7 +5,7 @@ import Text from './Text.tsx';
 
 const Footer: FunctionalComponent = () => {
   return (
-    <footer class='bg-pink py-6 mt-12'>
+    <footer class='bg-pink py-6'>
       <Container>
         <Navbar />
         <div className='mt-4 flex flex-wrap justify-between items-baseline'>
