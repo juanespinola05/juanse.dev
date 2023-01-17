@@ -35,37 +35,35 @@ export default function Home(props: PageProps<HomeProps>) {
         <title>Juanse | Programación y Desarrollo Web</title>
       </BaseHead>
       <BaseBody pathname='/'>
-        <div class='mt-12'>
-          <Container>
-            <div class='my-12'>
-              <Title size='5xl'>BLOG</Title>
-            </div>
-            <PostsGrid>
-              {posts.filter((_, i) => i < 4).map((post) => (
-                <PostComponent {...post} />
+        <Container>
+          <div class='my-12'>
+            <Title size='5xl'>BLOG</Title>
+          </div>
+          <PostsGrid>
+            {posts.filter((_, i) => i < 4).map((post) => (
+              <PostComponent {...post} />
+            ))}
+          </PostsGrid>
+          <hr class='border-b-2 border-gray-600 mt-12' />
+          <div class='my-12'>
+            <Title size='5xl'>JAVASCRIPT</Title>
+          </div>
+          <PostsGrid variant='reverse'>
+            {posts.filter((post, i) =>
+              post.tags.includes('javascript') && i < 4
+            ).map((post) => <PostComponent {...post} />)}
+          </PostsGrid>
+          <hr class='border-b-2 border-gray-600 mt-12' />
+          <div className='my-12'>
+            <Title size='5xl'>VIDEOS</Title>
+            <div className='mt-12'></div>
+            <VideosGrid>
+              {videos.filter((_, i) => i < 4).map((video) => (
+                <Video {...video} />
               ))}
-            </PostsGrid>
-            <hr class='border-b-2 border-gray-600 mt-12' />
-            <div class='my-12'>
-              <Title size='5xl'>JAVASCRIPT</Title>
-            </div>
-            <PostsGrid variant='reverse'>
-              {posts.filter((post, i) =>
-                post.tags.includes('javascript') && i < 4
-              ).map((post) => <PostComponent {...post} />)}
-            </PostsGrid>
-            <hr class='border-b-2 border-gray-600 mt-12' />
-            <div className='my-12'>
-              <Title size='5xl'>VIDEOS</Title>
-              <div className='mt-12'></div>
-              <VideosGrid>
-                {videos.filter((_, i) => i < 4).map((video) => (
-                  <Video {...video} />
-                ))}
-              </VideosGrid>
-            </div>
-          </Container>
-        </div>
+            </VideosGrid>
+          </div>
+        </Container>
       </BaseBody>
     </>
   );
