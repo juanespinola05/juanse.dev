@@ -2,7 +2,7 @@ import { Handlers, PageProps } from '$fresh/server.ts';
 import BaseBody from '../components/BaseBody.tsx';
 import BaseHead from '../components/BaseHead.tsx';
 import Container from '../components/Container.tsx';
-import PostComponent from '../components/Post.tsx';
+import PostComponent from '../components/HomePost.tsx';
 import PostsGrid from '../components/PostsGrid.tsx';
 import Title from '../components/Title.tsx';
 import Video from '../components/Video.tsx';

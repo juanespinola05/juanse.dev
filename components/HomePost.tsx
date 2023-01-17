@@ -10,7 +10,7 @@ import TagList from './TagList.tsx';
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
-const Post: FunctionalComponent<PostComponentProps> = ({
+const HomePost: FunctionalComponent<PostComponentProps> = ({
   date,
   excerpt,
   id,
@@ -21,7 +21,8 @@ const Post: FunctionalComponent<PostComponentProps> = ({
 }) => {
   const postStyles = tw`grid
     gap(y-2 x-2 sm:y-2 md:x-10 md:y-2)
-    grid-cols(1 sm:2 md:1)
+    grid-cols(1 sm:2 md:1 md:first-child:2 md:last-child:2 lg:last-child:1)
+    col-span(1 md:first-child:2 md:last-child:2 lg:first-child:3 lg:last-child:1)
     auto-rows-min
   `;
   const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }));
@@ -62,4 +63,4 @@ const Post: FunctionalComponent<PostComponentProps> = ({
   );
 };
 
-export default Post;
+export default HomePost;
