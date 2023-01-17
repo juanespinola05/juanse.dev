@@ -2,6 +2,8 @@ import { extract } from 'https://deno.land/std@0.170.0/encoding/front_matter/any
 import { Post, PostFrontMatter } from '../types/posts.d.ts';
 import { render } from 'deno-gfm';
 
+const POSTS_PER_PAGE = 6;
+
 export const loadPost = async (id: Post['id']): Promise<Post | null> => {
   let raw: string;
   try {
@@ -30,4 +32,31 @@ export const loadPosts = async (): Promise<Post[]> => {
   const posts = await Promise.all(promises);
 
   return posts;
+};
+
+export interface PostsPagination {
+  posts: Post[];
+  totalPages: number;
+  currentPage: number;
+}
+
+export const loadPostsByPage = async (
+  requestUrl: string,
+): Promise<PostsPagination> => {
+  const url = new URL(requestUrl);
+  const page = url.pathname.split('/').at(-1) || 1;
+  const posts = await loadPosts();
+
+  // calculate amount of pages from posts.length
+  const totalPages = (posts.length - (posts.length % POSTS_PER_PAGE)) /
+    POSTS_PER_PAGE;
+
+  return {
+    currentPage: +page,
+    posts: [...posts].splice(
+      +page * POSTS_PER_PAGE - POSTS_PER_PAGE,
+      POSTS_PER_PAGE,
+    ),
+    totalPages,
+  };
 };
