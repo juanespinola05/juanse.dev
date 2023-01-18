@@ -16,6 +16,9 @@ export const handler: Handlers = {
   async GET(__, context) {
     const videos = await getLatestVideos(10);
     const posts = await loadPosts();
+    posts.sort((a, b) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
     return context.render({ posts, videos });
   },
 };
