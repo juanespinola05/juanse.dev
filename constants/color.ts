@@ -8,4 +8,5 @@ export const colors: Record<TagType, string> = {
   'deno': '#e7378a',
   'nodejs': '#a44366',
   'vite': '#00beff',
+  'github': '#ff9900',
 };

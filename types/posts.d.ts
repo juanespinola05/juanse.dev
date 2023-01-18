@@ -16,6 +16,7 @@ export type TagType =
   | 'deno'
   | 'nodejs'
   | 'reactjs'
-  | 'vite';
+  | 'vite'
+  | 'github';
 
 export interface PostFrontMatter extends Omit<Post, 'body' | 'id'> {}
