@@ -33,9 +33,11 @@ export default function PagePost(props: PageProps) {
             <link
               rel='stylesheet'
               type='text/css'
-              href='/markdown-theme.css'
+              href='/markdown2.css'
             />
             <div
+              data-color-mode='dark'
+              data-dark-theme='dark'
               dangerouslySetInnerHTML={{ __html: post.body }}
               class='markdown-body'
             >
