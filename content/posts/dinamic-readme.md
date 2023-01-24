@@ -8,13 +8,10 @@ tags:
   - nodejs
   - github
 imageUrl: 'https://i.imgur.com/Jxf7Fn1.png'
+iconUrl: 'https://i.imgur.com/Dd56EdR.png'
 ---
 
-<img src="https://i.imgur.com/Jxf7Fn1.png" alt="" />
-
-# Cómo crear un README.md dinámico para tu perfil de Github con Node.js y Github Actions
-
-No sé si ya estabas al tanto de los ✨ repositorios especiales ✨ que podes
+No sé si ya estabas al tanto de los ✨ **repositorios especiales** ✨ que podes
 crear en tu cuenta de Github. Básicamente es uno que tiene tu mismo nombre de
 usuario. Github lo vuelve especial, ya que si dentro tiene un `README.md` (no
 tenerlo es delito igual 😳) a este lo va a mostrar en tu perfil.
@@ -31,11 +28,13 @@ Vamos a meter un poco de código para que luego, algunas partes sean dinámicas.
 <br />
 
 Para este tutorial, yo decidí usar este diseño que cree recolectando ideas de
-otros usuarios: ![Diseño a usar](https://i.imgur.com/ooH8HTX.png)
+otros usuarios:
+<br />
+<br /> ![Diseño a usar](https://i.imgur.com/ooH8HTX.png)
 <br />
 
 Si no sabés cómo crearlo, te dejo este repositorio y web que te van a servir de
-inspiración para poder maquetarlo!
+inspiración para poder maquetarlo:
 
 - [Awesome GitHub Profile README](https://github.com/abhisheknaiidu/awesome-github-profile-readme)
 - [Awesome GitHub Profile READMEs Web](https://zzetao.github.io/awesome-github-profile/)
@@ -64,7 +63,7 @@ En este tutorial vamos a necesitar:
 #### Creando el repositorio
 
 Primero que nada, vamos a dirigirnos a nuestro perfil de Github a crear nuestro
-✨ repo especial ✨.
+✨ **repo especial** ✨.
 
 En la página de inicio de Github, al lado de su imagen de perfil pueden crear un
 nuevo repositorio:
@@ -73,19 +72,23 @@ nuevo repositorio:
 <div align="center">
   <img src="https://i.imgur.com/0WvQrB1.png" alt="" />
 </div>
-<br /> Como nombre del repositorio, vamos a poner nuestro mismo nombre de
-usuario, para que sea ✨ especial ✨
+<br />
+Como nombre del repositorio, vamos a poner nuestro mismo nombre de
+usuario, para que sea ✨ <b>especial</b> ✨.
 <br />
 <img src="https://i.imgur.com/riDXmtN.gif" alt="" />
-<br /> \* Solo para este tutorial, yo lo nombre 'dinamic-readme-tutorial'
+<br />
+
+ℹ️ Solo para este tutorial, yo lo nombre <b>dinamic-readme-tutorial</b>
 
 **Paso importante para poder clonarlo:** vamos a bajar en esta misma página y
 marcar la opción "Add README file"
-<br />
+<br /><br />
 <img src="https://i.imgur.com/XzK6Orz.png" alt="" />
 
 Una vez creado, vamos a clonarlo en nuestra máquina. Copiamos el link y nos
 dirigimos a nuestra terminal:
+<br /><br />
 <img src="https://i.imgur.com/us3GlGW.png" />
 <br /> Si utilizas SSH, copias la dirección que aparece en la imagen. Sino, el
 link HTTPS va a estar bien (vas a tener que iniciar sesión al clonar el
@@ -126,7 +129,7 @@ $ npm init -y
 
 Esto nos va a generar el siguiente archivo:
 
-```json
+```javascript
 {
   "name": "dinamic-readme-tutorial",
   "version": "1.0.0",
@@ -199,7 +202,7 @@ Vamos a crear el archivo `.gitignore` para evitar enviar ficheros no deseados a
 nuestro repositorio remoto en GitHub. Lo creamos en la raíz de nuestro y dentro
 escribimos:
 
-```
+```bash
 node_modules/
 ```
 
@@ -399,6 +402,7 @@ Nuestro proyecto hasta el momento luce así:
 
 <img src="https://i.imgur.com/og01jHl.png" alt="" />
 <br />
+
 El archivo `package-lock.json` y la carpeta `node_modules` los crea Node.js.
 
 #### Buscando nuestra información
@@ -424,12 +428,12 @@ simple. Pueden ver información sobre esta en este link:
 ella, por lo que voy a crear en la raíz de mi proyecto dos archivos: `.env` y
 `.env.example`. En mi archivo .env voy a colocar:
 
-```
+```bash
 // .env
 RAPID_API_KEY='aidh29r87h23798fyh2b1298rf'
 ```
 
-```
+```bash
 // .env.example
 RAPID_API_KEY=''
 ```
@@ -437,7 +441,7 @@ RAPID_API_KEY=''
 El archivo .env tiene información sensible así que no debe ser enviado a nuestro
 repositorio remoto. Para ello, lo agregamos a nuestro archivo `.gitignore`
 
-```
+```bash
 node_modules/
 .env
 ```
@@ -446,7 +450,10 @@ Nuestro proyecto ahora luce así:
 
 <img src="https://i.imgur.com/rlFSKea.png" alt="">
 <br/>
+
 Ahora sí, en nuestro archivo de `videos.js`:
+
+<br />
 
 ```javascript
 // videos.js
@@ -555,28 +562,29 @@ $ node index.js
 
 Resultado:
 
-```bash
+```javascript
 {
-  videos: [
+  videos:
+  [
     {
       id: 'DWRb05qosak',
       thumbnail: 'https://i.ytimg.com/vi/DWRb05qosak/mqdefault.jpg',
       title: 'AdventJS on the fly #6: Creating Xmas decorations',
-      url: 'https://youtube.com/watch?v=DWRb05qosak'
+      url: 'https://youtube.com/watch?v=DWRb05qosak',
     },
     {
       id: 'gUxmFHvcXgk',
       thumbnail: 'https://i.ytimg.com/vi/gUxmFHvcXgk/mqdefault.jpg',
       title: 'Practicando CSS desde cero #4: Sección de modelos',
-      url: 'https://youtube.com/watch?v=gUxmFHvcXgk'
+      url: 'https://youtube.com/watch?v=gUxmFHvcXgk',
     },
     {
       id: 'TBueCOpgvFo',
       thumbnail: 'https://i.ytimg.com/vi/TBueCOpgvFo/mqdefault.jpg',
       title: 'AdventJS on the fly #4: Box inside a box and another...',
-      url: 'https://youtube.com/watch?v=TBueCOpgvFo'
-    }
-  ]
+      url: 'https://youtube.com/watch?v=TBueCOpgvFo',
+    },
+  ];
 }
 ```
 
@@ -675,9 +683,9 @@ Podes encontrar cómo funciona esta sintaxis en la
 y va a ejecutar un forEach. Por cada video va a crear los elementos `<tr>` y los
 que tiene dentro con la información de cada uno de los videos.
 
-\* Nótese cómo entre la etiqueta `tbody`está todo indendato sobre el margen.
-Esto está hecho a posta, ya que puede pasar que al parsear el markdown, se cree
-un snippet de nuestro código generado en lugar de mostrarlo como queremos.
+ℹ️ Nótese cómo entre la etiqueta `tbody`está todo indendato sobre el margen. Esto
+está hecho a posta, ya que puede pasar que al parsear el markdown, se cree un
+snippet de nuestro código generado en lugar de mostrarlo como queremos.
 
 #### Renderizado y guardado de la plantilla
 
@@ -710,17 +718,18 @@ renderizarla y guardar el resultado en README.md
 
 #### Automatización con Github Actions
 
-Github Actions es una plataforma de CI/CD que por supuesto está integrada a
-github y nos va a permitir crear lo que se llaman workflows. Estos workflows son
-simplemente scripts donde detallamos una serie de pasos y eventos para que se
-ejecuten ciertas tareas en nuestros repositorios.
+Github Actions es una plataforma de **CI/CD** que por supuesto está integrada a
+github y nos va a permitir crear lo que se llaman <u>workflows</u>. Estos
+workflows son simplemente scripts donde detallamos una <b>serie de pasos y
+eventos para que se ejecuten ciertas tareas en nuestros repositorios.</b>
+
 <br /> Nosotros vamos a crear un workflow especial que se ejecute, por ejemplo,
 todos los días a las 12pm. La idea es que este proceso cargue nuestro código, lo
 ejecute y los nuevos cambios los guarde en nuestro repositorio. Así de esa
 manera, todos los días a las 12pm de forma automática Github va a actualizar
 nuestro `README.md` con la información nueva!
 <br />
-<br /> Si te interesa conocer cómo funcionan Github Actions en detalle y
+<br /> ℹ️ Si te interesa conocer cómo funcionan Github Actions en detalle y
 aprender más sobre integración continua, podes indagar más en su documentación:
 [Github Actions Documentation](https://docs.github.com/en/actions)
 
@@ -772,10 +781,10 @@ schedule:
 Podes configurar tu periodo en esta página:
 [Crontab.guru - The cron schedule expression editor](https://crontab.guru/)
 
-El "Job" que aparece debajo llamado `render_readme` simplemente establece todos
-los pasos para:
+El **Job** que aparece debajo llamado `render_readme` simplemente establece
+todos los pasos para:
 
-1. Montar una máquina en ubuntu
+1. Montar una máquina con Ubuntu
 2. Cargar nuestro código
 3. Instalar Node.js en la máquina
 4. Instalar las dependencias que utiliza nuestro proyecto
@@ -787,14 +796,17 @@ Para que el paso número 5 pueda ejecutarse necesitamos proveerle la variable de
 entorno necesaria (RAPID_API_KEY en este caso) que no está disponible ya que no
 es información que enviamos a nuestro repositorio. Para añadirla vamos a seguir
 estos pasos:
+<br />
 <br /> En la página de nuestro repositorio, nos dirigimos a: **Settings >
 Secrets and Variables > Actions > New repository Secret** y en esa pantalla
 rellenamos la información:
+<br />
 <br /> ![](https://i.imgur.com/0dtagB8.gif)
 <br /> Para el último paso, nuestra "GITHUB_TOKEN" va a tener que tener permisos
 para leer y escribir en nuestro repositorio. Para eso tenemos que ir a la
 configuración de nuestro repositorio y habilitarla **Settings > Actions >
 General > Workflow Permissions > Read and write permissions**:
+<br />
 <br /> ![](https://i.imgur.com/ekzzOYa.gif)
 
 Este proceso también se dispara cuando nosotros hacemos un push a nuestro
@@ -812,7 +824,7 @@ de `main`
 
 #### Enviando todo a nuestro repositorio
 
-Tan solo falta hacer commit y enviar todo a github!
+Tan solo falta hacer commit y enviar todo a GitHub!
 
 ```bash
 $ git add .
@@ -823,9 +835,14 @@ $ git push origin main
 Este push va a disparar el workflow y vamos a poder ver cómo se ejecuta en
 nuestro repositorio, en la pestaña de **Actions**
 
+<br />
+Así, por ejemplo se está generando y actualizando mi README a diario:
+<br /><br />
+<img src="https://i.imgur.com/wp8GREf.png" alt="" />
+
 #### Conclusión
 
-Y listo! 🎉🎉 Así es como creamos un readme dinámico y ✨ especial ✨
+Y listo! 🎉🎉 Así es como creamos un readme dinámico y ✨ **especial** ✨
 
 En la segunda parte de este post, vamos a completar la tabla de post, haciendo
 scrapping con puppeteer, una manera distinta para poder obtener información.
@@ -834,7 +851,7 @@ Espero que este post te haya sido de ayuda o te haya dado nuevas ideas para
 crear tu propio programa. Si te gustó no dudes en dejar una estrellita en el
 repositorio ⭐
 
-##### Links de utilidad
+#### Links de utilidad
 
 - [Repositorio dinamic-readme-tutorial/](https://github.com/juanespinola05/dinamic-readme-tutorial/)
 - [Plantilla usada](https://pastebin.com/gv7J4Wau)
