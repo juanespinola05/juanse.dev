@@ -25,7 +25,9 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
   const { post } = props.data;
   const date = Intl.DateTimeFormat('es').format(new Date(post.date));
   const gridCss = tw(css({
-    'grid-template-columns': '100px auto',
+    '@media (min-width: 640px)': {
+      'grid-template-columns': '100px auto',
+    },
   }));
   return (
     <>
@@ -43,19 +45,20 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
             <div className='absolute right-[20px] top-52 hidden xl:block'>
               <PostNavigation />
             </div>
-            <div class={`grid ${gridCss} gap-3 my-12`}>
-              <div class='w-24 h-24'>
+            <header
+              class={`grid grid-cols-1 ${gridCss} grid-rows(2 sm:1) gap(5 sm:3) my-12`}
+            >
+              <div class='w(32 sm:24) h(32 sm:24) place-self-center'>
                 <img
-                  class='w-24 h-24'
                   src={post.iconUrl}
                   alt={post.title}
                 />
               </div>
               <div>
-                <h1 class='text-3xl'>{post.title}</h1>
+                <h1 class='text-3xl font-bold font-default'>{post.title}</h1>
                 <p class='mt-2 text-sm'>{date} &bull; {post.readingTime}</p>
               </div>
-            </div>
+            </header>
             <div
               data-color-mode='dark'
               data-dark-theme='dark'
