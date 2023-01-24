@@ -26,6 +26,7 @@
   --color-accent-fg: #0969da;
   --color-accent-emphasis: #0969da;
   --color-danger-fg: #cf222e;
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: light) {
