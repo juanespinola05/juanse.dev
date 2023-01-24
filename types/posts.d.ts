@@ -7,6 +7,7 @@ export interface Post {
   readingTime: string;
   tags: TagType[];
   imageUrl: string;
+  iconUrl: string;
 }
 
 export type TagType =
