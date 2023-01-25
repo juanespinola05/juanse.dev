@@ -11,6 +11,7 @@ import TagList from '../../components/TagList.tsx';
 // TODO: make this dinamic?
 import 'prismjs/components/prism-bash?no-check';
 import 'prismjs/components/prism-yaml?no-check';
+import ScrollToTop from '../../islands/ScrollToTop.tsx';
 
 export const handler: Handlers = {
   async GET(request, context): Promise<Response> {
@@ -42,6 +43,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
       </BaseHead>
       <BaseBody pathname='/blog'>
         <Container>
+          <ScrollToTop />
           <article class='max-w-3xl mx-auto override:list-none'>
             <div className='fixed right-[20px] top-52 hidden xl:block'>
               <PostNavigation />
