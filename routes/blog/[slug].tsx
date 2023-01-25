@@ -7,6 +7,7 @@ import Container from '../../components/Container.tsx';
 import { Post } from '../../types/posts.d.ts';
 import { loadPost } from '../../utils/post.ts';
 import PostNavigation from '../../islands/PostNavigations.tsx';
+import TagList from '../../components/TagList.tsx';
 // TODO: make this dinamic?
 import 'prismjs/components/prism-bash?no-check';
 import 'prismjs/components/prism-yaml?no-check';
@@ -67,6 +68,9 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
               dangerouslySetInnerHTML={{ __html: post.body }}
               class='markdown-body'
             >
+            </div>
+            <div className='my-12'>
+              <TagList tags={post.tags} />
             </div>
           </article>
         </Container>
