@@ -11,6 +11,7 @@ import * as $4 from './routes/blog/page/[page].tsx';
 import * as $5 from './routes/index.tsx';
 import * as $6 from './routes/videos/index.tsx';
 import * as $$0 from './islands/PostNavigations.tsx';
+import * as $$1 from './islands/ScrollToTop.tsx';
 
 const manifest = {
   routes: {
@@ -24,6 +25,7 @@ const manifest = {
   },
   islands: {
     './islands/PostNavigations.tsx': $$0,
+    './islands/ScrollToTop.tsx': $$1,
   },
   baseUrl: import.meta.url,
   config,
