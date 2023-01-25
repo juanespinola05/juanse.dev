@@ -7,7 +7,7 @@ const PostNavigation = () => {
 
   useLayoutEffect(() => {
     const anchors = window.document.querySelectorAll('article h4');
-    setSections([...anchors]);
+    setSections(Array.from(anchors));
   }, []);
 
   return (
