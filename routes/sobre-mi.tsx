@@ -4,6 +4,7 @@ import BaseBody from '../components/BaseBody.tsx';
 import Container from '../components/Container.tsx';
 import Title from '../components/Title.tsx';
 import Text from '../components/Text.tsx';
+import ListOfProjects from '../components/ListOfProjects.tsx';
 
 const list = {
   'JavaScript': '#9BB848',
@@ -72,6 +73,12 @@ const AboutMePage: FunctionalComponent = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className='font-oswald text-center'>
+            <Title size='3xl'>PROYECTOS ACTIVOS</Title>
+            <div class='flex flex-wrap justify-center my-12 gap-3'>
+              <ListOfProjects />
+            </div>
           </div>
         </Container>
       </BaseBody>
