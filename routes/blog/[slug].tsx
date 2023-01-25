@@ -39,7 +39,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
           href='/md.css'
         />
       </BaseHead>
-      <BaseBody>
+      <BaseBody pathname='/blog'>
         <Container>
           <article class='max-w-3xl mx-auto override:list-none'>
             <div className='absolute right-[20px] top-52 hidden xl:block'>
@@ -56,7 +56,9 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
               </div>
               <div>
                 <h1 class='text-3xl font-bold font-default'>{post.title}</h1>
-                <p class='mt-2 text-sm'>{date} &bull; {post.readingTime}</p>
+                <p class='mt-2 text-sm text-yellow-300'>
+                  {date} &bull; {post.readingTime}
+                </p>
               </div>
             </header>
             <div
