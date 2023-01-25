@@ -468,7 +468,7 @@
   box-sizing: content-box;
   background-color: var(--color-canvas-default);
   border-radius: 10px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
 }
 
 .markdown-body img[align="right"] {
@@ -599,7 +599,7 @@
 
 .markdown-body pre {
   word-wrap: normal;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
 }
 
 .markdown-body pre code {
