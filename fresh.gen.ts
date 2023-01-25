@@ -9,7 +9,8 @@ import * as $2 from './routes/blog/[slug].tsx';
 import * as $3 from './routes/blog/index.tsx';
 import * as $4 from './routes/blog/page/[page].tsx';
 import * as $5 from './routes/index.tsx';
-import * as $6 from './routes/videos/index.tsx';
+import * as $6 from './routes/sobre-mi.tsx';
+import * as $7 from './routes/videos/index.tsx';
 import * as $$0 from './islands/PostNavigations.tsx';
 import * as $$1 from './islands/ScrollToTop.tsx';
 
@@ -21,7 +22,8 @@ const manifest = {
     './routes/blog/index.tsx': $3,
     './routes/blog/page/[page].tsx': $4,
     './routes/index.tsx': $5,
-    './routes/videos/index.tsx': $6,
+    './routes/sobre-mi.tsx': $6,
+    './routes/videos/index.tsx': $7,
   },
   islands: {
     './islands/PostNavigations.tsx': $$0,
