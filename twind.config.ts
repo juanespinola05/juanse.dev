@@ -1,6 +1,6 @@
 import { Options } from '$fresh/plugins/twind.ts';
 import { css } from 'twind/css';
-import { apply } from 'twind';
+import { apply, tw } from 'twind';
 
 /** @type {Omit<import("$fresh/plugins/twind.ts").Options, "selfURL">} */
 export default {
@@ -8,13 +8,29 @@ export default {
     body: apply`
       ${
       css({
-        backgroundImage: 'url("/bg.png")',
-        backgroundRepeat: 'repeat-y',
-        backgroundSize: '100%',
-        backgroundColor: '#010137',
+        '&': {
+          backgroundColor: '#010137',
+        },
+        '&::before, &::after': {
+          position: 'fixed',
+          width: '300px',
+          height: '300px',
+          filter: 'blur(100px)',
+          zIndex: '-1',
+          content: '""',
+        },
+        '&::before': {
+          backgroundColor: '#370848',
+          top: '50px',
+          left: '30px',
+        },
+        '&::after': {
+          backgroundColor: '#1C0356',
+          bottom: '50px',
+          right: '30px',
+        },
       })
-    }
-    `,
+    }`,
   },
   theme: {
     extend: {

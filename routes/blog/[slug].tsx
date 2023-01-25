@@ -43,7 +43,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
       <BaseBody pathname='/blog'>
         <Container>
           <article class='max-w-3xl mx-auto override:list-none'>
-            <div className='absolute right-[20px] top-52 hidden xl:block'>
+            <div className='fixed right-[20px] top-52 hidden xl:block'>
               <PostNavigation />
             </div>
             <header
