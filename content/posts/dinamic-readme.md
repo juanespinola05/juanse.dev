@@ -50,7 +50,7 @@ traernos lo último a nuestro `README.md` cada cierta cantidad de tiempo.
 de videos, en la siguiente vemos cómo scrappear un blog y cargar las últimas
 publicaciones!
 
-#### Requerimientos:
+#### Requerimientos
 
 En este tutorial vamos a necesitar:
 
