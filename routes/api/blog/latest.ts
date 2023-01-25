@@ -2,7 +2,7 @@ import { Handlers } from '$fresh/server.ts';
 import { loadPosts } from '../../../utils/post.ts';
 
 export const handler: Handlers = {
-  async GET(_req): Promise<Response> {
+  async GET(): Promise<Response> {
     const posts = await loadPosts();
     posts.sort((a, b) =>
       new Date(a.date).getTime() - new Date(b.date).getTime()
