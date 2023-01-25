@@ -1,5 +1,5 @@
 import { Handlers } from '$fresh/server.ts';
-import { loadPosts } from '../../utils/post.ts';
+import { loadPosts } from '../../../utils/post.ts';
 
 export const handler: Handlers = {
   async GET(): Promise<Response> {
