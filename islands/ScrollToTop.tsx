@@ -29,7 +29,7 @@ const ScrollToTop: FunctionalComponent = () => {
       onClick={handleScroll}
       class={`${
         visible ? 'block' : 'hidden'
-      } fixed bottom-10 right-10 rounded-xl focus:outline-none active:outline-none bg-pink p-3 border-none`}
+      } fixed bottom-24 right-10 rounded-xl focus:outline-none active:outline-none bg-pink p-3 border-none`}
     >
       <ArrowUpIcon />
     </button>
