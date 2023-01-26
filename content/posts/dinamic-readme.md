@@ -7,8 +7,8 @@ tags:
   - javascript
   - nodejs
   - github
-imageUrl: 'https://i.imgur.com/Jxf7Fn1.png'
-iconUrl: 'https://i.imgur.com/Dd56EdR.png'
+imageUrl: '/posts/dinamic-readme-banner.webp'
+iconUrl: '/posts/github-actions.webp'
 ---
 
 No sé si ya estabas al tanto de los ✨ **repositorios especiales** ✨ que podes
