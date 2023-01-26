@@ -1,5 +1,5 @@
 ---
-title: Cómo crear un README.md dinámico para tu perfil de Github con Node.js y Github Actions
+title: Cómo crear un README dinámico para tu perfil de Github con Node.js y Github Actions
 excerpt: Paso a paso para crear un programa con Node.js y Github Actions para tener tu propio README dinámico en tu perfil de GitHub que se actualiza automáticamente
 date: '2023/01/17'
 readingTime: '30/60 minutos de lectura'
