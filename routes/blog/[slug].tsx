@@ -12,6 +12,7 @@ import TagList from '../../components/TagList.tsx';
 import 'prismjs/components/prism-bash?no-check';
 import 'prismjs/components/prism-yaml?no-check';
 import ScrollToTop from '../../islands/ScrollToTop.tsx';
+import BaseOG from '../../components/BaseOG.tsx';
 
 export const handler: Handlers = {
   async GET(request, context): Promise<Response> {
@@ -44,6 +45,14 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
         <meta
           name='description'
           content={post.excerpt}
+        />
+
+        <BaseOG
+          ogURL={`https://juanse.dev/blog/${post.id}`}
+          title={post.title}
+          description={post.excerpt}
+          image={post.imageUrl}
+          type={'article'}
         />
       </BaseHead>
       <BaseBody pathname='/blog'>
