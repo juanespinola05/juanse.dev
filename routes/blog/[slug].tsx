@@ -13,6 +13,7 @@ import 'prismjs/components/prism-bash?no-check';
 import 'prismjs/components/prism-yaml?no-check';
 import ScrollToTop from '../../islands/ScrollToTop.tsx';
 import BaseOG from '../../components/BaseOG.tsx';
+import ShareOnTwitter from '../../components/ShareOnTwitter.tsx';
 
 export const handler: Handlers = {
   async GET(request, context): Promise<Response> {
@@ -57,6 +58,10 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
       </BaseHead>
       <BaseBody pathname='/blog'>
         <Container>
+          <ShareOnTwitter
+            url={`https://juanse.dev/blog/${post.id}`}
+            text={post.title}
+          />
           <ScrollToTop />
           <article class='max-w-3xl mx-auto override:list-none'>
             <div className='fixed right-[20px] top-52 hidden xl:block'>
