@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from '$fresh/server.ts';
 import BaseBody from '../../../components/BaseBody.tsx';
 import BaseHead from '../../../components/BaseHead.tsx';
+import BaseOG from '../../../components/BaseOG.tsx';
 import Container from '../../../components/Container.tsx';
 import PageKeypad from '../../../components/PageKeypad.tsx';
 import PostComponent from '../../../components/Post.tsx';
@@ -26,6 +27,12 @@ export default function BlogPage(props: PageProps<PostsPagination>) {
     <>
       <BaseHead>
         <title>Juanse | Blog</title>
+        <meta name='title' content='Juanse | Blog' />
+        <meta
+          name='description'
+          content='Contenido, artículos y videos sobre desarrollo web en español, desde Argentina por Juan Sebas 🇦🇷 ❤️'
+        />
+        <BaseOG />
       </BaseHead>
       <BaseBody pathname='/blog'>
         <Container>

@@ -40,6 +40,11 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
           type='text/css'
           href='/md.css'
         />
+        <meta name='title' content={post.title} />
+        <meta
+          name='description'
+          content={post.excerpt}
+        />
       </BaseHead>
       <BaseBody pathname='/blog'>
         <Container>

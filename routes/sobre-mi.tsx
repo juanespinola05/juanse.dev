@@ -5,6 +5,7 @@ import Container from '../components/Container.tsx';
 import Title from '../components/Title.tsx';
 import Text from '../components/Text.tsx';
 import ListOfProjects from '../components/ListOfProjects.tsx';
+import BaseOG from '../components/BaseOG.tsx';
 
 const list = {
   'JavaScript': '#9BB848',
@@ -23,6 +24,12 @@ const AboutMePage: FunctionalComponent = () => {
     <>
       <BaseHead>
         <title>Sobre Juanse</title>
+        <meta name='title' content='Sobre Juanse' />
+        <meta
+          name='description'
+          content='¡Hola! Mi nombre es Juan Sebas y soy un apasionado del desarrollo web. Desde Argentina 🇦🇷 ❤️'
+        />
+        <BaseOG />
       </BaseHead>
       <BaseBody pathname='/sobre-mi'>
         <Container>

@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from '$fresh/server.ts';
 import BaseBody from '../components/BaseBody.tsx';
 import BaseHead from '../components/BaseHead.tsx';
+import BaseOG from '../components/BaseOG.tsx';
 import Container from '../components/Container.tsx';
 import PostComponent from '../components/HomePost.tsx';
 import PostsGrid from '../components/PostsGrid.tsx';
@@ -36,6 +37,12 @@ export default function Home(props: PageProps<HomeProps>) {
     <>
       <BaseHead>
         <title>Juanse | Programación y Desarrollo Web</title>
+        <meta name='title' content='Juanse | Programación y Desarrollo Web' />
+        <meta
+          name='description'
+          content='Juan Sebas. Desarrollador web. Contenido, artículos y videos sobre desarrollo web en español, desde Argentina 🇦🇷 ❤️'
+        />
+        <BaseOG />
       </BaseHead>
       <BaseBody pathname='/'>
         <Container>
