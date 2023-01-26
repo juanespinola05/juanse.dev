@@ -8,6 +8,7 @@ export interface Post {
   tags: TagType[];
   imageUrl: string;
   iconUrl: string;
+  ogUrl: string;
 }
 
 export type TagType =

@@ -8,6 +8,7 @@ tags:
   - nodejs
   - github
 imageUrl: '/posts/dinamic-readme-banner.webp'
+ogUrl: '/posts/og/dinamic-readme-banner.png'
 iconUrl: '/posts/github-actions.webp'
 ---
 

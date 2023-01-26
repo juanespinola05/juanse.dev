@@ -52,7 +52,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
           ogURL={`https://juanse.dev/blog/${post.id}`}
           title={post.title}
           description={post.excerpt}
-          image={post.imageUrl}
+          image={post.ogUrl}
           type={'article'}
         />
       </BaseHead>
