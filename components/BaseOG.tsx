@@ -13,7 +13,7 @@ const BaseOG: FunctionalComponent = () => {
         property='og:description'
         content='Juan Sebas. Desarrollador web. Contenido, artículos y videos sobre desarrollo web en español, desde Argentina 🇦🇷 ❤️'
       />
-      <meta property='og:image' content='base-og.png' />
+      <meta property='og:image' content='/base-og.png' />
       <meta property='twitter:card' content='summary_large_image' />
       <meta property='twitter:url' content='https://juanse.dev/' />
       <meta
@@ -24,7 +24,7 @@ const BaseOG: FunctionalComponent = () => {
         property='twitter:description'
         content='Juan Sebas. Desarrollador web. Contenido, artículos y videos sobre desarrollo web en español, desde Argentina 🇦🇷 ❤️'
       />
-      <meta property='twitter:image' content='base-og.png' />
+      <meta property='twitter:image' content='/base-og.png' />
     </>
   );
 };
