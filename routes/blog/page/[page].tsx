@@ -5,7 +5,6 @@ import BaseOG from '../../../components/BaseOG.tsx';
 import Container from '../../../components/Container.tsx';
 import PageKeypad from '../../../components/PageKeypad.tsx';
 import PostComponent from '../../../components/Post.tsx';
-import Title from '../../../components/Title.tsx';
 import { loadPostsByPage, PostsPagination } from '../../../utils/post.ts';
 
 export const handler: Handlers = {
