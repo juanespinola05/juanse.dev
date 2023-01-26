@@ -29,7 +29,10 @@ const AboutMePage: FunctionalComponent = () => {
           name='description'
           content='¡Hola! Mi nombre es Juan Sebas y soy un apasionado del desarrollo web. Desde Argentina 🇦🇷 ❤️'
         />
-        <BaseOG />
+        <BaseOG
+          ogURL='https://juanse.dev/sobre-mi'
+          title='Sobre Juanse'
+        />
       </BaseHead>
       <BaseBody pathname='/sobre-mi'>
         <Container>
