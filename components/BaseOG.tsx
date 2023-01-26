@@ -31,7 +31,7 @@ const BaseOG: FunctionalComponent<BaseOGProps> = (
         property='og:description'
         content={description}
       />
-      <meta property='og:image' itemProp='image' content={image} />
+      <meta property='og:image' content={image} />
       <meta property='twitter:card' content='summary_large_image' />
       <meta property='twitter:url' content={ogURL} />
       <meta
