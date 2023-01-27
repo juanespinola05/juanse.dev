@@ -37,7 +37,7 @@ const PostNavigation = () => {
   const navStyles = tw(css({
     '&': {
       '@apply':
-        'fixed rounded-xl rounded-tl-none transition-all max-h-[400px] top-52',
+        'fixed rounded-xl rounded-tl-none transition-all max-h-[400px] top-52 z-10',
       right: mobile && show ? '20px' : (mobile ? '-200px' : '20px'),
       backgroundColor: mobile ? 'rgb(55,65,81)' : 'transparent',
     },
