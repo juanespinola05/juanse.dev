@@ -63,10 +63,8 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
             text={post.title}
           />
           <ScrollToTop />
-          <article class='max-w-3xl mx-auto override:list-none'>
-            <div className='fixed right-[20px] top-52 hidden xl:block'>
-              <PostNavigation />
-            </div>
+          <article class='max-w-3xl mx-auto override:list-none relative'>
+            <PostNavigation />
             <header
               class={`grid grid-cols-1 ${gridCss} grid-rows(2 sm:1) gap(5 sm:3) my-12`}
             >
