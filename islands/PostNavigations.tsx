@@ -60,7 +60,11 @@ const PostNavigation = () => {
         <ul class='list-inside flex flex-col gap-1'>
           {sections.map((section) => (
             <li key={section.id} class='text-gray-400 hover:text-white'>
-              <a href={`#${section.id}`} onClick={handleNavigation}>
+              <a
+                href={`#${section.id}`}
+                onClick={handleNavigation}
+                class='block'
+              >
                 <span class='text-white'>- &nbsp;</span>
                 {section.textContent}
               </a>
