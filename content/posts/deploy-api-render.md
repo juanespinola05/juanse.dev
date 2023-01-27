@@ -1,7 +1,7 @@
 ---
 title: Cómo desplegar una API REST GRATIS en Render con Node.js y TypeScript
 excerpt: Cómo desplegar una aplicación de Node.js con Typescript en Render.com, una alternativa a Heroku para crear servicios en distintas plataformas de manera gratuita y rápida.
-date: '2023/01/26'
+date: '2023/01/27'
 readingTime: '15/20 minutos de lectura'
 tags:
   - typescript
