@@ -372,7 +372,23 @@
 .markdown-body ul,
 .markdown-body ol {
   padding-left: 2em;
-  list-style-type: disc !important;
+}
+
+.markdown-body ul li {
+  position: relative;
+}
+
+.markdown-body ul li::before {
+  content: '';
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #E71E7C;
+  position: absolute;
+  left: -20px;
+  bottom: 3.5px;
+  top: 0;
+  margin: auto
 }
 
 .markdown-body ul.no-list,
@@ -464,6 +480,14 @@
 }
 
 .markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: var(--color-canvas-default);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+.markdown-body video {
   max-width: 100%;
   box-sizing: content-box;
   background-color: var(--color-canvas-default);
