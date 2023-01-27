@@ -17,7 +17,7 @@ const ShareOnTwitter: FunctionalComponent<ShareOnTwitterProps> = (
       rel='noopener noreferrer'
       target='_blank'
       href={shareUrl.toString()}
-      class='cursor-pointer bg-white text-[#1D9BF0] rounded-xl bottom(5 sm:10) right(3 sm:10) p-3 fixed flex gap-2'
+      class='cursor-pointer bg-white text-[#1D9BF0] rounded-xl bottom(5 sm:10) right(3 sm:10) p-3 fixed flex gap-2 z-10'
       title='Compartir publicación en Twitter'
     >
       <IconTwitter />
