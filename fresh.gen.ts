@@ -9,11 +9,10 @@ import * as $2 from './routes/blog/[slug].tsx';
 import * as $3 from './routes/blog/index.tsx';
 import * as $4 from './routes/blog/page/[page].tsx';
 import * as $5 from './routes/contacto.tsx';
-import * as $6 from './routes/github.tsx';
-import * as $7 from './routes/index.tsx';
-import * as $8 from './routes/sitemap.xml.ts';
-import * as $9 from './routes/sobre-mi.tsx';
-import * as $10 from './routes/videos/index.tsx';
+import * as $6 from './routes/index.tsx';
+import * as $7 from './routes/sitemap.xml.ts';
+import * as $8 from './routes/sobre-mi.tsx';
+import * as $9 from './routes/videos/index.tsx';
 import * as $$0 from './islands/PostNavigations.tsx';
 import * as $$1 from './islands/ScrollToTop.tsx';
 
@@ -25,11 +24,10 @@ const manifest = {
     './routes/blog/index.tsx': $3,
     './routes/blog/page/[page].tsx': $4,
     './routes/contacto.tsx': $5,
-    './routes/github.tsx': $6,
-    './routes/index.tsx': $7,
-    './routes/sitemap.xml.ts': $8,
-    './routes/sobre-mi.tsx': $9,
-    './routes/videos/index.tsx': $10,
+    './routes/index.tsx': $6,
+    './routes/sitemap.xml.ts': $7,
+    './routes/sobre-mi.tsx': $8,
+    './routes/videos/index.tsx': $9,
   },
   islands: {
     './islands/PostNavigations.tsx': $$0,
