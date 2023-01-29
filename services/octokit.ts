@@ -1,7 +1,4 @@
 import { Octokit } from 'npm:octokit@2.0.11';
-import { dotEnvConfig } from '../config/dept.ts';
-
-dotEnvConfig({ export: true });
 
 export const octokit = new Octokit({
   auth: Deno.env.get('GITHUB_OCTOKIT_TOKEN'),

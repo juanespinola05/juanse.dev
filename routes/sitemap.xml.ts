@@ -1,7 +1,7 @@
 import { Handlers } from '$fresh/server.ts';
-import manifest from './fresh.gen.ts';
+import manifest from '../fresh.gen.ts';
 import { SitemapContext } from 'fresh_seo/mod.ts';
-import { loadPosts } from './utils/post.ts';
+import { loadPosts } from '../utils/post.ts';
 
 export const handler: Handlers = {
   async GET(): Promise<Response> {
