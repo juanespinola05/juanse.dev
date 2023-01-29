@@ -4,7 +4,7 @@ import { SitemapContext } from 'fresh_seo/mod.ts';
 import { loadPosts } from '../utils/post.ts';
 
 export const handler: Handlers = {
-  async GET() {
+  async GET(): Promise<Response> {
     const sitemap = new SitemapContext('https://juanse.dev', manifest);
     const posts = await loadPosts();
     posts.forEach(({ id }) => sitemap.add(`/blog/${id}`));
