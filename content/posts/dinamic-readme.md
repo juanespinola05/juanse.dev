@@ -17,14 +17,14 @@ crear en tu cuenta de Github. Básicamente es uno que tiene tu mismo nombre de
 usuario. Github lo vuelve especial, ya que si dentro tiene un `README.md` (no
 tenerlo es delito igual 😳) a este lo va a mostrar en tu perfil.
 <br />
-<br /> Si tenes ganas de enriquecer tu perfil, darle estilo y hacer que su
+<br /> Si tenés ganas de enriquecer tu perfil, darle estilo y hacer que su
 contenido sea dinámico, este sencillo tutorial te va a ayudar a construirlo.
 <br />
 
 #### Plantilla
 
 Lo primero que vamos a necesitar es establecer cuál va a ser nuestro diseño y
-qué información nos interesa compartir. Preparalo a mano segun mas te guste!
+qué información nos interesa compartir. Preparalo a mano según más te guste!
 Vamos a meter un poco de código para que luego, algunas partes sean dinámicas.
 <br />
 
@@ -43,7 +43,7 @@ inspiración para poder maquetarlo:
 También podes utilizar el mismo y hacerle tus modificaciones 😄
 
 Este diseño viene genial para el tutorial. Tiene dos tablas, una de últimos
-posts y otra de últimos videos. Si tuviesemos que actualizar manualmente esa
+posts y otra de últimos videos. Si tuviésemos que actualizar manualmente esa
 información por cada vez que tenemos un nuevo post o un nuevo video, sería super
 tedioso. En su lugar, vamos a usar Github Actions para que se encargue de
 traernos lo último a nuestro `README.md` cada cierta cantidad de tiempo.
@@ -408,13 +408,13 @@ El archivo `package-lock.json` y la carpeta `node_modules` los crea Node.js.
 
 #### Buscando nuestra información
 
-Este es el momento de crear las funciones que van a obtener nuestra información,
-para tenerla actualizada!
+Este es el momento de crear las funciones que van a obtener nuestra información
+para tenerla actualizada.
 <br /> Dependiendo de nuestro perfil y lo que queramos hacer, vamos a buscar
 información de distintos lugares. En mi caso, necesito traer la información
 desde mi blog, y tambien traer los videos de Youtube.
 <br /> La idea es simple, si tenes casos diferentes, vas a saber cómo encaminar
-la solución y hacer tu propia implementación para buscar tu propia información!
+la solución y hacer tu propia implementación para buscar tu propia información.
 
 Voy a crear una carpeta llamada `utils/` y dentro de esta, un archivo llamado
 `videos.js`
@@ -591,7 +591,7 @@ Resultado:
 
 #### Modificando nuestra plantilla con EJS
 
-Ya que tenemos nuestra información, solo nos queda editar nuestro archivo
+Ya que tenemos nuestra información, sólo nos queda editar nuestro archivo
 template para que este se encargue de, por cada video que le enviamos, crear el
 elemento HTML para el mismo.
 <br /> En un comienzo escribimos videos a mano en nuestro archivo

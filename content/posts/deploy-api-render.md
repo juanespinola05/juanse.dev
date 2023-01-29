@@ -22,8 +22,7 @@ montón de servicios. Podes revisarlos todos acá:
 [render pricing](https://render.com/pricing).
 
 Acá abajo voy a mostrar como desplegar una API REST hecha con express en
-**render**. La voy a crear con TypeScript, pero a la vez indicar qué pasos si
-deseas hacerla sólo con JavaScript.
+**render**. La voy a crear con TypeScript.
 
 #### Requerimientos
 
@@ -56,8 +55,9 @@ $ git remote add origin <url-de-tu-repo-creado>
 
 Creamos un archivo `.gitignore` y dentro especificamos
 
-```markdown
-node_modules/ .env
+```bash
+node_modules/
+.env
 ```
 
 #### Inicializamos nuestro proyecto
@@ -151,7 +151,7 @@ Seleccionamos nuestro repositorio y clicamos en `Connect`
 Vamos a rellenar la información de la siguiente forma:
 
 - **Name:** El nombre que quieras darle a tu aplicación.
-- **Region:** Podes elegir la que te convenga.
+- **Region:** Podés elegir la que te convenga.
 - **Branch:** La rama que queremos desplegar, en mi caso es `main`.
 - **Root Directory:** Nuestra carpeta raiz, en mi caso la dejo vacía ya que es
   la propia del repositorio.
@@ -177,7 +177,7 @@ haga la build y despliegue nuestra aplicación.
 A partir de este punto podes empezar a crear tu API y expandirla según los
 requerimientos de tu proyecto. Tené en cuenta que cada vez que haces PUSH a tu
 rama, el deploy se va a hacer de forma automática. Accediendo a `Settings` en el
-panel de tu servicio podes cambiar este comportamiento o indicar que sólo se
+panel de tu servicio podés cambiar este comportamiento o indicar que sólo se
 dispare el deploy cuando ocurren commits en otra rama (por ej. `production`).
 
 ℹ️ Si tenes problemas de incompatibilidades con ciertas dependencias que no sabes
