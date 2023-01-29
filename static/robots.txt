@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/*
+Disallow: /blog/first-post
+Disallow: /blog/second-post
+Disallow: /blog/fourth-post
+Disallow: /blog/third-post
+Sitemap: https://juanse.dev/sitemap.xml
