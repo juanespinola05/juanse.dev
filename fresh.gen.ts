@@ -13,8 +13,10 @@ import * as $6 from './routes/index.tsx';
 import * as $7 from './routes/sitemap.xml.ts';
 import * as $8 from './routes/sobre-mi.tsx';
 import * as $9 from './routes/videos/index.tsx';
-import * as $$0 from './islands/PostNavigations.tsx';
-import * as $$1 from './islands/ScrollToTop.tsx';
+import * as $$0 from './islands/CopyButton.tsx';
+import * as $$1 from './islands/PostNavigations.tsx';
+import * as $$2 from './islands/ScrollToTop.tsx';
+import * as $$3 from './islands/ShareModal.tsx';
 
 const manifest = {
   routes: {
@@ -30,8 +32,10 @@ const manifest = {
     './routes/videos/index.tsx': $9,
   },
   islands: {
-    './islands/PostNavigations.tsx': $$0,
-    './islands/ScrollToTop.tsx': $$1,
+    './islands/CopyButton.tsx': $$0,
+    './islands/PostNavigations.tsx': $$1,
+    './islands/ScrollToTop.tsx': $$2,
+    './islands/ShareModal.tsx': $$3,
   },
   baseUrl: import.meta.url,
   config,
