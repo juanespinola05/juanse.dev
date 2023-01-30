@@ -29,6 +29,10 @@ export default {
           bottom: '50px',
           right: '30px',
         },
+        '&.noscroll': {
+          maxHeight: '100vh',
+          overflow: 'hidden',
+        },
       })
     }`,
   },
