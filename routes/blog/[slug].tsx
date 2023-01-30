@@ -47,6 +47,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
           name='description'
           content={post.excerpt}
         />
+        <link rel='canonical' href={`https://juanse.dev/blog/${post.id}`} />
 
         <BaseOG
           ogURL={`https://juanse.dev/blog/${post.id}`}

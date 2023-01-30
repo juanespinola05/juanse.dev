@@ -31,6 +31,7 @@ export default function BlogPage(props: PageProps<PostsPagination>) {
           name='description'
           content='Contenido, artículos y videos sobre desarrollo web en español, desde Argentina por Juan Sebas 🇦🇷 ❤️'
         />
+        <link rel='canonical' href='https://juanse.dev/blog' />
         <BaseOG
           ogURL={`https://juanse.dev/blog/page/${currentPage}`}
           title='Juanse | Blog'

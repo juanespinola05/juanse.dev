@@ -42,6 +42,7 @@ export default function Home(props: PageProps<HomeProps>) {
           name='description'
           content='Juan Sebas. Desarrollador web. Contenido, artículos y videos sobre desarrollo web en español, desde Argentina 🇦🇷 ❤️'
         />
+        <link rel='canonical' href='https://juanse.dev' />
         <BaseOG />
       </BaseHead>
       <BaseBody pathname='/'>
