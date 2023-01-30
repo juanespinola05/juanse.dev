@@ -11,7 +11,7 @@ const PostNavigation = () => {
 
   useEffect(() => {
     const handleWindowResize = () => {
-      if (self.innerWidth >= 1000) setMobile(false);
+      if (self.innerWidth >= 1260) setMobile(false);
       else {
         setMobile(true);
         setShow(false);
