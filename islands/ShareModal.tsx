@@ -62,7 +62,7 @@ const ShareModal: FunctionalComponent<ShareOptions> = (
               <input
                 class='px-1 py-3 text-gray-600 text-lg focus:outline-none'
                 type='text'
-                value='https://juanse.dev'
+                value={url}
                 readOnly
               />
               <div class='px-3 py-2 text-center bg-pink min-w-[75px] rounded-xl my-2 text-white'>
