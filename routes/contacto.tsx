@@ -19,6 +19,7 @@ const ContactPage: FunctionalComponent = () => {
           name='description'
           content='Juan Sebas. Desarrollador web. Contenido, artículos y videos sobre desarrollo web en español, desde Argentina 🇦🇷 ❤️'
         />
+        <link rel='canonical' href='https://juanse.dev/contacto' />
         <BaseOG title='Juanse | Contacto' ogURL='https://juanse.dev/contacto' />
       </BaseHead>
       <BaseBody>
