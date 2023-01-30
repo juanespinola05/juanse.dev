@@ -16,6 +16,7 @@ const BaseHead: FunctionalComponent = ({ children }) => {
         rel='stylesheet'
       />
       <meta name='author' content='Juan Sebastian Espinola' />
+      <meta name='theme-color' content='#010137' />
     </Head>
   );
 };
