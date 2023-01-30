@@ -8,3 +8,4 @@ Disallow: /blog/third-post
 Sitemap: https://juanse.dev/sitemap.xml
 Disallow: /blog/page
 Allow: /blog/page/1
+Disallow: /posts/og/
