@@ -1,4 +1,2 @@
-export function handler(): Response {
-  const baseUrl = Deno.env.get('BASE_DOMAIN');
-  return Response.redirect(`${baseUrl}/blog/page/1`, 302);
-}
+export { handler } from './page/[page].tsx';
+export { default } from './page/[page].tsx';
