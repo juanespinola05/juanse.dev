@@ -40,7 +40,7 @@ export const getLatestVideos = async (
       id: e.id.videoId,
       tags: getTagsFromTitle(e.snippet.title),
     }));
-    console.log(details);
+
     return details;
   } catch (error) {
     console.log(error);
