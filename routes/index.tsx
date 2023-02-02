@@ -6,7 +6,6 @@ import Container from '../components/Container.tsx';
 import PostComponent from '../components/HomePost.tsx';
 import PostsGrid from '../components/PostsGrid.tsx';
 import Title from '../components/Title.tsx';
-import Video from '../components/Video.tsx';
 import VideosGrid from '../components/VideosGrid.tsx';
 import { getLatestVideos } from '../services/youtubev3.ts';
 import { Post } from '../types/posts.d.ts';
@@ -68,11 +67,7 @@ export default function Home(props: PageProps<HomeProps>) {
           <div className='my-12'>
             <Title size='5xl'>VIDEOS</Title>
             <div className='mt-12'></div>
-            <VideosGrid>
-              {videos.filter((_, i) => i < 4).map((video) => (
-                <Video {...video} />
-              ))}
-            </VideosGrid>
+            <VideosGrid videos={videos} displayNumber={4} />
           </div>
         </Container>
       </BaseBody>
