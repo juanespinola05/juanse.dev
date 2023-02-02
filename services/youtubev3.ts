@@ -34,14 +34,31 @@ export const getLatestVideos = async (
       video.id.kind.endsWith('video')
     );
     const details = filteredVideos.map((e) => ({
-      thumbnail: e.snippet.thumbnails.high.url,
+      thumbnail: e.snippet.thumbnails.medium.url,
       title: e.snippet.title,
       date: e.snippet.publishedAt,
       id: e.id.videoId,
+      tags: getTagsFromTitle(e.snippet.title),
     }));
+    console.log(details);
     return details;
   } catch (error) {
     console.log(error);
     return [];
+  }
+};
+
+// todo: temporal implementation
+const getTagsFromTitle = (title: string): VideoDetails['tags'] => {
+  const foo = title.toLowerCase();
+  switch (true) {
+    case foo.includes('advenjs'):
+      return ['javascript', 'logica', 'typescript'];
+    case foo.includes('practicando css'):
+      return ['css', 'html'];
+    case foo.includes('curso frontend'):
+      return ['css', 'html', 'javascript'];
+    default:
+      return ['javascript', 'typescript'];
   }
 };

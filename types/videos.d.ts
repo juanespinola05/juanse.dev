@@ -3,6 +3,7 @@ export interface VideoDetails {
   thumbnail: string;
   title: string;
   date: Date;
+  tags: VideoTag[];
 }
 
 export interface VideoFromAPI {
@@ -13,10 +14,11 @@ export interface VideoFromAPI {
   snippet: {
     title: string;
     thumbnails: {
-      high: {
+      medium: {
         url: string;
       };
     };
+    description: string;
     publishedAt: Date;
   };
 }
@@ -24,3 +26,5 @@ export interface VideoFromAPI {
 export interface YoutubeAPIResponse {
   items: VideoFromAPI[];
 }
+
+type VideoTag = 'javascript' | 'html' | 'css' | 'typescript' | 'logica';
