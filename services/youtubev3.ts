@@ -1,23 +1,23 @@
 import { dotEnvConfig } from '../config/dept.ts';
-import { VideoDetails, YoutubeAPIResponse } from '../types/videos.d.ts';
+import {
+  ChannelDetails,
+  ChannelDetailsFromAPI,
+  VideoDetails,
+  YoutubeAPIResponse,
+} from '../types/videos.d.ts';
 
 await dotEnvConfig({ export: true });
 
 export const getLatestVideos = async (
   maxResults = 4,
 ): Promise<VideoDetails[]> => {
-  const params = {
-    channelId: Deno.env.get('YOUTUBE_CHANNEL_ID'),
+  const params = stringifyParams({
+    channelId: Deno.env.get('YOUTUBE_CHANNEL_ID') ?? '',
     part: 'snippet,id',
     order: 'date',
     maxResults: maxResults,
-  };
+  });
 
-  const paramString = Object.entries(params)
-    .map(([key, value]) => {
-      return `${key}=${value}`;
-    })
-    .join('&');
   const options: RequestInit = {
     headers: {
       'X-RapidAPI-Key': Deno.env.get('RAPID_API_KEY') ?? '',
@@ -25,7 +25,7 @@ export const getLatestVideos = async (
     },
   };
 
-  const requestUrl = `https://youtube-v31.p.rapidapi.com/search?${paramString}`;
+  const requestUrl = `https://youtube-v31.p.rapidapi.com/search?${params}`;
 
   try {
     const response = await fetch(requestUrl, options);
@@ -62,3 +62,45 @@ const getTagsFromTitle = (title: string): VideoDetails['tags'] => {
       return ['javascript', 'typescript'];
   }
 };
+
+export const getChannelDetails = async (): Promise<ChannelDetails> => {
+  const params = stringifyParams({
+    id: Deno.env.get('YOUTUBE_CHANNEL_ID') ?? '',
+    part: 'snippet,id',
+  });
+  const options: RequestInit = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': Deno.env.get('RAPID_API_KEY') ?? '',
+      'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
+    },
+  };
+  const requestUrl = `https://youtube-v31.p.rapidapi.com/channels?${params}`;
+
+  const res = await fetch(requestUrl, options);
+  const data: ChannelDetailsFromAPI = await res.json();
+
+  const {
+    snippet: { customUrl, thumbnails, title },
+    statistics: { videoCount, subscriberCount, viewCount },
+  } = data.items[0];
+  return {
+    title,
+    videoCount,
+    subscriberCount,
+    viewCount,
+    thumbnail: thumbnails.medium.url,
+    channelUrl: `https://youtube.com/${customUrl}`,
+  };
+};
+
+function stringifyParams(
+  params: Record<string, string | number | boolean>,
+): string {
+  const paramString = Object.entries(params)
+    .map(([key, value]) => {
+      return `${key}=${value}`;
+    })
+    .join('&');
+  return paramString;
+}

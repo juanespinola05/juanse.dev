@@ -28,3 +28,32 @@ export interface YoutubeAPIResponse {
 }
 
 type VideoTag = 'javascript' | 'html' | 'css' | 'typescript' | 'logica';
+
+interface ChannelDetailFromAPI {
+  snippet: {
+    title: string;
+    thumbnails: {
+      medium: {
+        url: string;
+      };
+    };
+    customUrl: string;
+  };
+  statistics: {
+    viewCount: string;
+    subscriberCount: string;
+    videoCount: string;
+  };
+}
+export interface ChannelDetailsFromAPI {
+  items: ChannelDetailFromAPI[];
+}
+
+export interface ChannelDetails {
+  title: string;
+  thumbnail: string;
+  viewCount: string;
+  subscriberCount: string;
+  channelUrl: string;
+  videoCount: string;
+}
