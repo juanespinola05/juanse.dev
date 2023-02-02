@@ -31,6 +31,7 @@ const Video: FunctionalComponent<VideoDetails> = (
             class='h-28 object-center'
             src={thumbnail}
             alt={`Minatura del video: ${title}`}
+            loading='lazy'
           />
         </div>
         <div class='flex flex-col gap-3 justify-center'>
@@ -38,7 +39,7 @@ const Video: FunctionalComponent<VideoDetails> = (
           <ul class='flex gap-2'>
             {tags.map((tag) => (
               <li class='w-6 h-6'>
-                <img src={`/${tag}.svg`} alt={tag} />
+                <img src={`/${tag}.svg`} alt={tag} loading='lazy' />
               </li>
             ))}
           </ul>
