@@ -20,7 +20,7 @@ const Video: FunctionalComponent<VideoDetails> = (
             bottom: '0',
           },
         }))
-      } w-full h-28 relative shadow-md rounded-2xl bg-[rgba(255,255,255,0.1)] overflow-hidden transition-transform hover:scale-105`}
+      } w-full h-28 relative shadow-md rounded-xl bg-[rgba(255,255,255,0.1)] overflow-hidden transition-transform hover:scale-105`}
     >
       <span class='transition-all absolute py-1 px-2 rounded-tl-2xl bg-pink text-white right-0 bottom-[-60px]'>
         <DateText date={date} />
