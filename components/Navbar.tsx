@@ -1,7 +1,7 @@
-import { tw } from 'twind';
-import { css } from 'twind/css';
-import { FunctionalComponent } from 'preact';
-import { PathnameProps } from '../types.d.ts';
+import { tw } from 'twind'
+import { css } from 'twind/css'
+import { FunctionalComponent } from 'preact'
+import { PathnameProps } from '../types.d.ts'
 
 const routes = [
   {
@@ -24,7 +24,7 @@ const routes = [
     name: 'Contacto',
     path: '/contacto',
   },
-];
+]
 
 const Navbar: FunctionalComponent<PathnameProps> = ({ pathname }) => {
   const active = tw(css({
@@ -32,7 +32,7 @@ const Navbar: FunctionalComponent<PathnameProps> = ({ pathname }) => {
       '@apply': 'absolute w-full h-1 bg-pink top-9 left-0',
       content: '""',
     },
-  }));
+  }))
   return (
     <nav class='border(b-2 [rgba(255,255,255,0.5)]) py-2'>
       <ul class='flex gap-4'>
@@ -50,7 +50,7 @@ const Navbar: FunctionalComponent<PathnameProps> = ({ pathname }) => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

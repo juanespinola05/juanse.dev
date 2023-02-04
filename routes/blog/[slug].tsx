@@ -1,38 +1,38 @@
-import { Handlers, PageProps } from '$fresh/server.ts';
-import { css } from 'twind/css';
-import { tw } from 'twind';
-import BaseBody from '../../components/BaseBody.tsx';
-import BaseHead from '../../components/BaseHead.tsx';
-import Container from '../../components/Container.tsx';
-import { Post } from '../../types/posts.d.ts';
-import { loadPost } from '../../utils/post.ts';
-import PostNavigation from '../../islands/PostNavigations.tsx';
-import TagList from '../../components/TagList.tsx';
+import { Handlers, PageProps } from '$fresh/server.ts'
+import { css } from 'twind/css'
+import { tw } from 'twind'
+import BaseBody from '../../components/BaseBody.tsx'
+import BaseHead from '../../components/BaseHead.tsx'
+import Container from '../../components/Container.tsx'
+import { Post } from '../../types/posts.d.ts'
+import { loadPost } from '../../utils/post.ts'
+import PostNavigation from '../../islands/PostNavigations.tsx'
+import TagList from '../../components/TagList.tsx'
 // TODO: make this dinamic?
-import 'prismjs/components/prism-bash?no-check';
-import 'prismjs/components/prism-yaml?no-check';
-import ScrollToTop from '../../islands/ScrollToTop.tsx';
-import BaseOG from '../../components/BaseOG.tsx';
-import ShareModal from '../../islands/ShareModal.tsx';
+import 'prismjs/components/prism-bash?no-check'
+import 'prismjs/components/prism-yaml?no-check'
+import ScrollToTop from '../../islands/ScrollToTop.tsx'
+import BaseOG from '../../components/BaseOG.tsx'
+import ShareModal from '../../islands/ShareModal.tsx'
 
 export const handler: Handlers = {
   async GET(request, context): Promise<Response> {
-    const { slug } = context.params;
-    const post = await loadPost(slug);
+    const { slug } = context.params
+    const post = await loadPost(slug)
 
-    if (!post) return context.renderNotFound();
-    return context.render({ post });
+    if (!post) return context.renderNotFound()
+    return context.render({ post })
   },
-};
+}
 
 export default function PagePost(props: PageProps<{ post: Post }>) {
-  const { post } = props.data;
-  const date = Intl.DateTimeFormat('es').format(new Date(post.date));
+  const { post } = props.data
+  const date = Intl.DateTimeFormat('es').format(new Date(post.date))
   const gridCss = tw(css({
     '@media (min-width: 640px)': {
       'grid-template-columns': '100px auto',
     },
-  }));
+  }))
   return (
     <>
       <BaseHead>
@@ -96,5 +96,5 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
         </Container>
       </BaseBody>
     </>
-  );
+  )
 }

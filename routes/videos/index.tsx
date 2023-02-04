@@ -1,26 +1,23 @@
-import { Handlers, PageProps } from '$fresh/server.ts';
-import BaseBody from '../../components/BaseBody.tsx';
-import BaseHead from '../../components/BaseHead.tsx';
-import BaseOG from '../../components/BaseOG.tsx';
-import Container from '../../components/Container.tsx';
-import VideosGrid from '../../components/VideosGrid.tsx';
-import {
-  getChannelDetails,
-  getLatestVideos,
-} from '../../services/youtubev3.ts';
-import { ChannelDetails, VideoDetails } from '../../types/videos.d.ts';
+import { Handlers, PageProps } from '$fresh/server.ts'
+import BaseBody from '../../components/BaseBody.tsx'
+import BaseHead from '../../components/BaseHead.tsx'
+import BaseOG from '../../components/BaseOG.tsx'
+import Container from '../../components/Container.tsx'
+import VideosGrid from '../../components/VideosGrid.tsx'
+import { getChannelDetails, getLatestVideos } from '../../services/youtubev3.ts'
+import { ChannelDetails, VideoDetails } from '../../types/videos.d.ts'
 
 export const handler: Handlers = {
   async GET(req, ctx) {
-    const videos = await getLatestVideos(15);
-    const channel = await getChannelDetails();
-    return ctx.render({ videos, channel });
+    const videos = await getLatestVideos(15)
+    const channel = await getChannelDetails()
+    return ctx.render({ videos, channel })
   },
-};
+}
 
 interface VideosPageProps {
-  videos: VideoDetails[];
-  channel: ChannelDetails;
+  videos: VideoDetails[]
+  channel: ChannelDetails
 }
 
 export default function VideosPage(
@@ -32,7 +29,7 @@ export default function VideosPage(
     title,
     videoCount,
     viewCount,
-  } = channel;
+  } = channel
   return (
     <>
       <BaseHead>
@@ -101,5 +98,5 @@ export default function VideosPage(
         </Container>
       </BaseBody>
     </>
-  );
+  )
 }

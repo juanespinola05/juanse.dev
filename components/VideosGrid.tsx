@@ -1,11 +1,11 @@
-import { FunctionalComponent } from 'preact';
-import { VideoDetails } from '../types/videos.d.ts';
-import Video from './Video.tsx';
+import { FunctionalComponent } from 'preact'
+import { VideoDetails } from '../types/videos.d.ts'
+import Video from './Video.tsx'
 
 interface VideosGridProps {
-  videos: VideoDetails[];
-  displayNumber: number;
-  moreVideosPath?: string;
+  videos: VideoDetails[]
+  displayNumber: number
+  moreVideosPath?: string
 }
 
 const VideosGrid: FunctionalComponent<VideosGridProps> = (
@@ -22,7 +22,7 @@ const VideosGrid: FunctionalComponent<VideosGridProps> = (
         <a href={moreVideosPath} class='text-right text-blue-500'>Ver más</a>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default VideosGrid;
+export default VideosGrid

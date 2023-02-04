@@ -1,11 +1,11 @@
-import { FunctionalComponent } from 'preact';
+import { FunctionalComponent } from 'preact'
 
 interface BaseOGProps {
-  ogURL?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  type?: 'article' | 'website';
+  ogURL?: string
+  title?: string
+  description?: string
+  image?: string
+  type?: 'article' | 'website'
 }
 
 const BaseOG: FunctionalComponent<BaseOGProps> = (
@@ -44,7 +44,7 @@ const BaseOG: FunctionalComponent<BaseOGProps> = (
       />
       <meta property='twitter:image' content={image} />
     </>
-  );
-};
+  )
+}
 
-export default BaseOG;
+export default BaseOG

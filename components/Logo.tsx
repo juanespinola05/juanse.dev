@@ -1,4 +1,4 @@
-import { FunctionalComponent, JSX } from 'preact';
+import { FunctionalComponent, JSX } from 'preact'
 
 export const Logo: FunctionalComponent<JSX.HTMLAttributes<HTMLImageElement>> = (
   props,
@@ -9,5 +9,5 @@ export const Logo: FunctionalComponent<JSX.HTMLAttributes<HTMLImageElement>> = (
       src='/logo.png'
       alt='Juanse Logo'
     />
-  );
-};
+  )
+}

@@ -1,14 +1,14 @@
-import { FunctionalComponent } from 'preact';
-import { tw } from 'twind';
-import { css } from 'twind/css';
+import { FunctionalComponent } from 'preact'
+import { tw } from 'twind'
+import { css } from 'twind/css'
 
 const gridVariants = {
   default: 1,
   reverse: -1,
-};
+}
 
 interface PostGridProps {
-  variant?: keyof typeof gridVariants;
+  variant?: keyof typeof gridVariants
 }
 
 const PostsGrid: FunctionalComponent<PostGridProps> = (
@@ -33,12 +33,12 @@ const PostsGrid: FunctionalComponent<PostGridProps> = (
         '@apply': `md:order-[${gridVariants[variant]}]`,
       },
     }),
-  );
+  )
   return (
     <div class={`grid grid-cols(1 md:2 lg:3) gap(4 md:x-10 md:y-8) ${cssGrid}`}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default PostsGrid;
+export default PostsGrid

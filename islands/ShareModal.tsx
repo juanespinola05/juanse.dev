@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'preact/hooks';
-import { FunctionalComponent, JSX } from 'preact';
-import SocialMediaShareList from '../components/SocialMediaShareList.tsx';
-import CopyButton from './CopyButton.tsx';
-import IconShare from 'tabler-icon/share.tsx';
-import IconLink from 'tabler-icon/link.tsx';
-import IconX from 'tabler-icon/x.tsx';
-import { ShareOptions } from '../types.d.ts';
+import { useEffect, useState } from 'preact/hooks'
+import { FunctionalComponent, JSX } from 'preact'
+import SocialMediaShareList from '../components/SocialMediaShareList.tsx'
+import CopyButton from './CopyButton.tsx'
+import IconShare from 'tabler-icon/share.tsx'
+import IconLink from 'tabler-icon/link.tsx'
+import IconX from 'tabler-icon/x.tsx'
+import { ShareOptions } from '../types.d.ts'
 
 const ShareModal: FunctionalComponent<ShareOptions> = (
   { url, text, title },
 ) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
   const handleClick: JSX.MouseEventHandler<HTMLButtonElement> = () => {
     if ('share' in navigator) {
-      navigator.share({ url, text, title });
+      navigator.share({ url, text, title })
     } else {
-      setShowModal(true);
+      setShowModal(true)
     }
-  };
+  }
 
   useEffect(() => {
-    if (showModal) document.body.classList.add('noscroll');
-    else document.body.classList.remove('noscroll');
-  }, [showModal]);
+    if (showModal) document.body.classList.add('noscroll')
+    else document.body.classList.remove('noscroll')
+  }, [showModal])
 
   return (
     <>
@@ -73,7 +73,7 @@ const ShareModal: FunctionalComponent<ShareOptions> = (
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ShareModal;
+export default ShareModal

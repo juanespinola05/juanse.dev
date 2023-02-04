@@ -1,8 +1,8 @@
-import { FunctionalComponent } from 'preact';
-import { PathnameProps } from '../types.d.ts';
-import Container from './Container.tsx';
-import { Logo } from './Logo.tsx';
-import Navbar from './Navbar.tsx';
+import { FunctionalComponent } from 'preact'
+import { PathnameProps } from '../types.d.ts'
+import Container from './Container.tsx'
+import { Logo } from './Logo.tsx'
+import Navbar from './Navbar.tsx'
 
 const Header: FunctionalComponent<PathnameProps> = ({ pathname }) => {
   return (
@@ -14,7 +14,7 @@ const Header: FunctionalComponent<PathnameProps> = ({ pathname }) => {
         <Navbar pathname={pathname} />
       </Container>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

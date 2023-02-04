@@ -1,36 +1,36 @@
-import { Handlers, PageProps } from '$fresh/server.ts';
-import BaseBody from '../components/BaseBody.tsx';
-import BaseHead from '../components/BaseHead.tsx';
-import BaseOG from '../components/BaseOG.tsx';
-import Container from '../components/Container.tsx';
-import PostComponent from '../components/HomePost.tsx';
-import PostsGrid from '../components/PostsGrid.tsx';
-import Title from '../components/Title.tsx';
-import VideosGrid from '../components/VideosGrid.tsx';
-import { getLatestVideos } from '../services/youtubev3.ts';
-import { Post } from '../types/posts.d.ts';
-import { VideoDetails } from '../types/videos.d.ts';
-import { loadPosts } from '../utils/post.ts';
+import { Handlers, PageProps } from '$fresh/server.ts'
+import BaseBody from '../components/BaseBody.tsx'
+import BaseHead from '../components/BaseHead.tsx'
+import BaseOG from '../components/BaseOG.tsx'
+import Container from '../components/Container.tsx'
+import PostComponent from '../components/HomePost.tsx'
+import PostsGrid from '../components/PostsGrid.tsx'
+import Title from '../components/Title.tsx'
+import VideosGrid from '../components/VideosGrid.tsx'
+import { getLatestVideos } from '../services/youtubev3.ts'
+import { Post } from '../types/posts.d.ts'
+import { VideoDetails } from '../types/videos.d.ts'
+import { loadPosts } from '../utils/post.ts'
 
 export const handler: Handlers = {
   async GET(__, context) {
-    const videos = await getLatestVideos(10);
-    const posts = await loadPosts();
+    const videos = await getLatestVideos(10)
+    const posts = await loadPosts()
     posts.sort((a, b) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-    return context.render({ posts, videos });
+    )
+    return context.render({ posts, videos })
   },
-};
+}
 
 interface HomeProps {
-  posts: Post[];
-  videos: VideoDetails[];
+  posts: Post[]
+  videos: VideoDetails[]
 }
 
 export default function Home(props: PageProps<HomeProps>) {
-  const { data } = props;
-  const { posts, videos } = data;
+  const { data } = props
+  const { posts, videos } = data
 
   return (
     <>
@@ -72,5 +72,5 @@ export default function Home(props: PageProps<HomeProps>) {
         </Container>
       </BaseBody>
     </>
-  );
+  )
 }

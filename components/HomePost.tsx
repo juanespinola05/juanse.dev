@@ -1,12 +1,12 @@
-import { FunctionalComponent } from 'preact';
-import Title from './Title.tsx';
-import IconClock from 'tabler-icon/clock.tsx';
-import Text from './Text.tsx';
-import { css } from 'twind/css';
-import { tw } from 'twind';
-import { Post } from '../types/posts.d.ts';
-import DateText from './DateText.tsx';
-import TagList from './TagList.tsx';
+import { FunctionalComponent } from 'preact'
+import Title from './Title.tsx'
+import IconClock from 'tabler-icon/clock.tsx'
+import Text from './Text.tsx'
+import { css } from 'twind/css'
+import { tw } from 'twind'
+import { Post } from '../types/posts.d.ts'
+import DateText from './DateText.tsx'
+import TagList from './TagList.tsx'
 
 interface PostComponentProps extends Omit<Post, 'body'> {}
 
@@ -24,8 +24,8 @@ const HomePost: FunctionalComponent<PostComponentProps> = ({
     grid-cols(1 sm:2 md:1 md:first-child:2 md:last-child:2 lg:last-child:1)
     col-span(1 md:first-child:2 md:last-child:2 lg:first-child:3 lg:last-child:1)
     auto-rows-min
-  `;
-  const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }));
+  `
+  const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }))
   return (
     <a
       href={`/blog/${id}`}
@@ -60,7 +60,7 @@ const HomePost: FunctionalComponent<PostComponentProps> = ({
         </div>
       </div>
     </a>
-  );
-};
+  )
+}
 
-export default HomePost;
+export default HomePost

@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'preact/hooks';
-import { FunctionalComponent } from 'preact';
-import ArrowUpIcon from 'tabler-icon/arrow-up.tsx';
+import { useEffect, useState } from 'preact/hooks'
+import { FunctionalComponent } from 'preact'
+import ArrowUpIcon from 'tabler-icon/arrow-up.tsx'
 
 const ScrollToTop: FunctionalComponent = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   const handleScroll = () => {
     self.scrollTo({
       top: 0,
       behavior: 'smooth',
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     const handleScrollEvent = () => {
-      setVisible(self.scrollY > 200);
-    };
-    self.addEventListener('scroll', handleScrollEvent);
-    handleScrollEvent();
+      setVisible(self.scrollY > 200)
+    }
+    self.addEventListener('scroll', handleScrollEvent)
+    handleScrollEvent()
 
     return () => {
-      self.removeEventListener('scroll', handleScrollEvent);
-    };
-  }, []);
+      self.removeEventListener('scroll', handleScrollEvent)
+    }
+  }, [])
 
   return (
     <button
@@ -33,7 +33,7 @@ const ScrollToTop: FunctionalComponent = () => {
     >
       <ArrowUpIcon />
     </button>
-  );
-};
+  )
+}
 
-export default ScrollToTop;
+export default ScrollToTop

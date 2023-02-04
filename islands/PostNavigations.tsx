@@ -1,38 +1,38 @@
-import { css } from 'twind/css';
-import { tw } from 'twind';
-import { useEffect, useLayoutEffect, useState } from 'preact/hooks';
+import { css } from 'twind/css'
+import { tw } from 'twind'
+import { useEffect, useLayoutEffect, useState } from 'preact/hooks'
 
-type SectionsType = Element[];
+type SectionsType = Element[]
 
 const PostNavigation = () => {
-  const [sections, setSections] = useState<SectionsType>([]);
-  const [show, setShow] = useState(false);
-  const [mobile, setMobile] = useState(true);
+  const [sections, setSections] = useState<SectionsType>([])
+  const [show, setShow] = useState(false)
+  const [mobile, setMobile] = useState(true)
 
   useEffect(() => {
     const handleWindowResize = () => {
-      if (self.innerWidth >= 1260) setMobile(false);
+      if (self.innerWidth >= 1260) setMobile(false)
       else {
-        setMobile(true);
-        setShow(false);
+        setMobile(true)
+        setShow(false)
       }
-    };
+    }
 
-    self.addEventListener('resize', handleWindowResize);
+    self.addEventListener('resize', handleWindowResize)
 
     return () => {
-      self.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
+      self.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
 
   useLayoutEffect(() => {
-    const anchors = self.document.querySelectorAll('article h4');
-    setSections(Array.from(anchors));
-  }, []);
+    const anchors = self.document.querySelectorAll('article h4')
+    setSections(Array.from(anchors))
+  }, [])
 
   const handleNavigation = () => {
-    if (mobile) setShow(!show);
-  };
+    if (mobile) setShow(!show)
+  }
 
   const navStyles = tw(css({
     '&': {
@@ -41,7 +41,7 @@ const PostNavigation = () => {
       right: mobile && show ? '20px' : (mobile ? '-200px' : '20px'),
       backgroundColor: mobile ? 'rgb(55,65,81)' : 'transparent',
     },
-  }));
+  }))
 
   return (
     <div
@@ -73,7 +73,7 @@ const PostNavigation = () => {
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PostNavigation;
+export default PostNavigation

@@ -1,5 +1,5 @@
-import { FunctionalComponent } from 'preact';
-import { Head } from '$fresh/runtime.ts';
+import { FunctionalComponent } from 'preact'
+import { Head } from '$fresh/runtime.ts'
 
 const BaseHead: FunctionalComponent = ({ children }) => {
   return (
@@ -18,7 +18,7 @@ const BaseHead: FunctionalComponent = ({ children }) => {
       <meta name='author' content='Juan Sebastian Espinola' />
       <meta name='theme-color' content='#010137' />
     </Head>
-  );
-};
+  )
+}
 
-export default BaseHead;
+export default BaseHead

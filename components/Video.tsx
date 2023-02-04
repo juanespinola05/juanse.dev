@@ -1,13 +1,13 @@
-import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index';
-import { css } from 'twind/css';
-import { tw } from 'twind';
-import { VideoDetails } from '../types/videos.d.ts';
-import DateText from './DateText.tsx';
+import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index'
+import { css } from 'twind/css'
+import { tw } from 'twind'
+import { VideoDetails } from '../types/videos.d.ts'
+import DateText from './DateText.tsx'
 
 const Video: FunctionalComponent<VideoDetails> = (
   { thumbnail, title, date, id, tags },
 ) => {
-  const videoUrl = 'https://youtube.com/watch?v=' + id;
+  const videoUrl = 'https://youtube.com/watch?v=' + id
   return (
     <a
       href={videoUrl}
@@ -46,7 +46,7 @@ const Video: FunctionalComponent<VideoDetails> = (
         </div>
       </div>
     </a>
-  );
-};
+  )
+}
 
-export default Video;
+export default Video

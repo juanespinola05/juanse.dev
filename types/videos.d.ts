@@ -1,59 +1,59 @@
 export interface VideoDetails {
-  id: string;
-  thumbnail: string;
-  title: string;
-  date: Date;
-  tags: VideoTag[];
+  id: string
+  thumbnail: string
+  title: string
+  date: Date
+  tags: VideoTag[]
 }
 
 export interface VideoFromAPI {
   id: {
-    videoId: string;
-    kind: string;
-  };
+    videoId: string
+    kind: string
+  }
   snippet: {
-    title: string;
+    title: string
     thumbnails: {
       medium: {
-        url: string;
-      };
-    };
-    description: string;
-    publishedAt: Date;
-  };
+        url: string
+      }
+    }
+    description: string
+    publishedAt: Date
+  }
 }
 
 export interface YoutubeAPIResponse {
-  items: VideoFromAPI[];
+  items: VideoFromAPI[]
 }
 
-type VideoTag = 'javascript' | 'html' | 'css' | 'typescript' | 'logica';
+type VideoTag = 'javascript' | 'html' | 'css' | 'typescript' | 'logica'
 
 interface ChannelDetailFromAPI {
   snippet: {
-    title: string;
+    title: string
     thumbnails: {
       medium: {
-        url: string;
-      };
-    };
-    customUrl: string;
-  };
+        url: string
+      }
+    }
+    customUrl: string
+  }
   statistics: {
-    viewCount: string;
-    subscriberCount: string;
-    videoCount: string;
-  };
+    viewCount: string
+    subscriberCount: string
+    videoCount: string
+  }
 }
 export interface ChannelDetailsFromAPI {
-  items: ChannelDetailFromAPI[];
+  items: ChannelDetailFromAPI[]
 }
 
 export interface ChannelDetails {
-  title: string;
-  thumbnail: string;
-  viewCount: string;
-  subscriberCount: string;
-  channelUrl: string;
-  videoCount: string;
+  title: string
+  thumbnail: string
+  viewCount: string
+  subscriberCount: string
+  channelUrl: string
+  videoCount: string
 }

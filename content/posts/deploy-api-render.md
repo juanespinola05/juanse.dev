@@ -101,17 +101,17 @@ $ npx tsc --init --outDir build
 Creamos nuestra aplicación en `index.ts`:
 
 ```javascript
-import express from 'express';
-const app = express();
-const port = 3000;
+import express from 'express'
+const app = express()
+const port = 3000
 
 app.get('/', (_req, res) => {
-  res.send('API REST desplegada en Render.com!!');
-});
+  res.send('API REST desplegada en Render.com!!')
+})
 
 app.listen(port, () => {
-  console.log(`Express escuchando en http://localhost:${port}`);
-});
+  console.log(`Express escuchando en http://localhost:${port}`)
+})
 ```
 
 #### Probando nuestra aplicación

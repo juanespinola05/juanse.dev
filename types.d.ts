@@ -1,5 +1,5 @@
 export interface PathnameProps {
-  pathname?: string;
+  pathname?: string
 }
 
 export type SocialMediaTypes =
@@ -7,6 +7,6 @@ export type SocialMediaTypes =
   | 'twitter'
   | 'whatsapp'
   | 'linkedin'
-  | 'telegram';
+  | 'telegram'
 
 export interface ShareOptions extends Omit<ShareData, 'files'> {}

@@ -1,11 +1,11 @@
-import { FunctionalComponent } from 'preact';
-import BaseHead from '../components/BaseHead.tsx';
-import BaseBody from '../components/BaseBody.tsx';
-import Container from '../components/Container.tsx';
-import Title from '../components/Title.tsx';
-import Text from '../components/Text.tsx';
-import ListOfProjects from '../components/ListOfProjects.tsx';
-import BaseOG from '../components/BaseOG.tsx';
+import { FunctionalComponent } from 'preact'
+import BaseHead from '../components/BaseHead.tsx'
+import BaseBody from '../components/BaseBody.tsx'
+import Container from '../components/Container.tsx'
+import Title from '../components/Title.tsx'
+import Text from '../components/Text.tsx'
+import ListOfProjects from '../components/ListOfProjects.tsx'
+import BaseOG from '../components/BaseOG.tsx'
 
 const list = {
   'JavaScript': '#9BB848',
@@ -17,7 +17,7 @@ const list = {
   'Desarrollo Web': '#a44366',
   'Tomar mate': '#00beff',
   'Educación': '#ff9900',
-};
+}
 
 const AboutMePage: FunctionalComponent = () => {
   return (
@@ -102,7 +102,7 @@ const AboutMePage: FunctionalComponent = () => {
         </Container>
       </BaseBody>
     </>
-  );
-};
+  )
+}
 
-export default AboutMePage;
+export default AboutMePage

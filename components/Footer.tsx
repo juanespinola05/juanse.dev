@@ -1,7 +1,7 @@
-import { FunctionalComponent } from 'preact';
-import Container from './Container.tsx';
-import Navbar from './Navbar.tsx';
-import Text from './Text.tsx';
+import { FunctionalComponent } from 'preact'
+import Container from './Container.tsx'
+import Navbar from './Navbar.tsx'
+import Text from './Text.tsx'
 
 const Footer: FunctionalComponent = () => {
   return (
@@ -14,7 +14,7 @@ const Footer: FunctionalComponent = () => {
         </div>
       </Container>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

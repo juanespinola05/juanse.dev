@@ -1,4 +1,4 @@
-import { TagType } from '../types/posts.d.ts';
+import { TagType } from '../types/posts.d.ts'
 
 export const colors: Record<TagType, string> = {
   'javascript': '#9BB848',
@@ -9,4 +9,4 @@ export const colors: Record<TagType, string> = {
   'nodejs': '#a44366',
   'vite': '#00beff',
   'github': '#ff9900',
-};
+}

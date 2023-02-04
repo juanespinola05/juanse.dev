@@ -2,21 +2,21 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import config from './deno.json' assert { type: 'json' };
-import * as $0 from './routes/_404.tsx';
-import * as $1 from './routes/api/blog/latest.ts';
-import * as $2 from './routes/blog/[slug].tsx';
-import * as $3 from './routes/blog/index.tsx';
-import * as $4 from './routes/blog/page/[page].tsx';
-import * as $5 from './routes/contacto.tsx';
-import * as $6 from './routes/index.tsx';
-import * as $7 from './routes/sitemap.xml.ts';
-import * as $8 from './routes/sobre-mi.tsx';
-import * as $9 from './routes/videos/index.tsx';
-import * as $$0 from './islands/CopyButton.tsx';
-import * as $$1 from './islands/PostNavigations.tsx';
-import * as $$2 from './islands/ScrollToTop.tsx';
-import * as $$3 from './islands/ShareModal.tsx';
+import config from './deno.json' assert { type: 'json' }
+import * as $0 from './routes/_404.tsx'
+import * as $1 from './routes/api/blog/latest.ts'
+import * as $2 from './routes/blog/[slug].tsx'
+import * as $3 from './routes/blog/index.tsx'
+import * as $4 from './routes/blog/page/[page].tsx'
+import * as $5 from './routes/contacto.tsx'
+import * as $6 from './routes/index.tsx'
+import * as $7 from './routes/sitemap.xml.ts'
+import * as $8 from './routes/sobre-mi.tsx'
+import * as $9 from './routes/videos/index.tsx'
+import * as $$0 from './islands/CopyButton.tsx'
+import * as $$1 from './islands/PostNavigations.tsx'
+import * as $$2 from './islands/ScrollToTop.tsx'
+import * as $$3 from './islands/ShareModal.tsx'
 
 const manifest = {
   routes: {
@@ -39,6 +39,6 @@ const manifest = {
   },
   baseUrl: import.meta.url,
   config,
-};
+}
 
-export default manifest;
+export default manifest

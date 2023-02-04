@@ -1,14 +1,14 @@
 export interface Post {
-  id: string;
-  title: string;
-  excerpt: string;
-  body: string;
-  date: Date;
-  readingTime: string;
-  tags: TagType[];
-  imageUrl: string;
-  iconUrl: string;
-  ogUrl: string;
+  id: string
+  title: string
+  excerpt: string
+  body: string
+  date: Date
+  readingTime: string
+  tags: TagType[]
+  imageUrl: string
+  iconUrl: string
+  ogUrl: string
 }
 
 export type TagType =
@@ -19,6 +19,6 @@ export type TagType =
   | 'nodejs'
   | 'reactjs'
   | 'vite'
-  | 'github';
+  | 'github'
 
 export interface PostFrontMatter extends Omit<Post, 'body' | 'id'> {}

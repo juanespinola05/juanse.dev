@@ -1,6 +1,6 @@
-import { Options } from '$fresh/plugins/twind.ts';
-import { css } from 'twind/css';
-import { apply, tw } from 'twind';
+import { Options } from '$fresh/plugins/twind.ts'
+import { css } from 'twind/css'
+import { apply, tw } from 'twind'
 
 /** @type {Omit<import("$fresh/plugins/twind.ts").Options, "selfURL">} */
 export default {
@@ -60,4 +60,4 @@ export default {
       },
     },
   },
-} as Omit<Options, 'selfURL'>;
+} as Omit<Options, 'selfURL'>

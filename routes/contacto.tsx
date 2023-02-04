@@ -1,13 +1,13 @@
-import { FunctionalComponent } from 'preact';
-import BaseHead from '../components/BaseHead.tsx';
-import BaseBody from '../components/BaseBody.tsx';
-import BaseOG from '../components/BaseOG.tsx';
-import Container from '../components/Container.tsx';
-import Title from '../components/Title.tsx';
-import IconMail from 'tabler-icon/mail.tsx';
-import IconLinkedIn from 'tabler-icon/brand-linkedin.tsx';
-import IconGitHub from 'tabler-icon/brand-github.tsx';
-import Text from '../components/Text.tsx';
+import { FunctionalComponent } from 'preact'
+import BaseHead from '../components/BaseHead.tsx'
+import BaseBody from '../components/BaseBody.tsx'
+import BaseOG from '../components/BaseOG.tsx'
+import Container from '../components/Container.tsx'
+import Title from '../components/Title.tsx'
+import IconMail from 'tabler-icon/mail.tsx'
+import IconLinkedIn from 'tabler-icon/brand-linkedin.tsx'
+import IconGitHub from 'tabler-icon/brand-github.tsx'
+import Text from '../components/Text.tsx'
 
 const ContactPage: FunctionalComponent = () => {
   return (
@@ -61,7 +61,7 @@ const ContactPage: FunctionalComponent = () => {
         </Container>
       </BaseBody>
     </>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage

@@ -1,10 +1,10 @@
-import { FunctionalComponent } from 'preact';
-import IconGitHub from 'tabler-icon/brand-github.tsx';
-import IconExternalLink from 'tabler-icon/external-link.tsx';
+import { FunctionalComponent } from 'preact'
+import IconGitHub from 'tabler-icon/brand-github.tsx'
+import IconExternalLink from 'tabler-icon/external-link.tsx'
 
 interface ProjectWrapperProps {
-  image: string;
-  name: string;
+  image: string
+  name: string
 }
 
 const ProjectWrapper: FunctionalComponent<ProjectWrapperProps> = (
@@ -19,8 +19,8 @@ const ProjectWrapper: FunctionalComponent<ProjectWrapperProps> = (
         </ul>
       </div>
     </article>
-  );
-};
+  )
+}
 
 const ListOfProjects: FunctionalComponent = () => {
   return (
@@ -78,7 +78,7 @@ const ListOfProjects: FunctionalComponent = () => {
         </li>
       </ProjectWrapper>
     </>
-  );
-};
+  )
+}
 
-export default ListOfProjects;
+export default ListOfProjects

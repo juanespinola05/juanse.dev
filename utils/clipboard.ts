@@ -1,3 +1,3 @@
 export const handleCopy = (text: string) => {
-  return navigator.clipboard.writeText(text);
-};
+  return navigator.clipboard.writeText(text)
+}
