@@ -6,6 +6,5 @@ Disallow: /blog/second-post
 Disallow: /blog/fourth-post
 Disallow: /blog/third-post
 Sitemap: https://juanse.dev/sitemap.xml
-Disallow: /blog/page
 Disallow: /posts/og/
 Disallow: https://finance-api.juanse.dev
