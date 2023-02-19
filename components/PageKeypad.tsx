@@ -11,7 +11,7 @@ const PageKeypad: FunctionalComponent<PageKeyPadProps> = (
     <div class='h-16 mb-12 flex justify-center items-center gap-2 flex-wrap'>
       {pageButtons.map((page) => {
         const isCurrent = currentPage === page
-        const path = isCurrent ? '#' : `/blog/page/${page}`
+        const path = isCurrent ? '#' : `/blog?page=${page}`
         return (
           <a
             href={path}

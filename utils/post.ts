@@ -44,13 +44,13 @@ export const loadPostsByPage = async (
   requestUrl: string,
 ): Promise<PostsPagination> => {
   const url = new URL(requestUrl)
-  const page = url.pathname.split('/').at(-1) || 1
+  const page = url.searchParams.get('page') || 1
   const posts = await loadPosts()
   posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   // calculate amount of pages from posts.length
-  const totalPages = (posts.length - (posts.length % POSTS_PER_PAGE)) /
-    POSTS_PER_PAGE
+  const foo = posts.length / POSTS_PER_PAGE
+  const totalPages = foo % 1 === 0 ? foo : Math.ceil(foo)
 
   return {
     currentPage: +page,
