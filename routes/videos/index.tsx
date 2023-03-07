@@ -1,9 +1,9 @@
 import { Handlers, PageProps } from '$fresh/server.ts'
-import BaseBody from '../../components/BaseBody.tsx'
-import BaseHead from '../../components/BaseHead.tsx'
+import Document from '../../layouts/Document.tsx'
+import Head from '../../layouts/Head.tsx'
 import BaseOG from '../../components/BaseOG.tsx'
-import Container from '../../components/Container.tsx'
-import VideosGrid from '../../components/VideosGrid.tsx'
+import Container from '../../layouts/Container.tsx'
+import VideosGrid from '../../layouts/VideosGrid.tsx'
 import { getChannelDetails, getLatestVideos } from '../../services/youtubev3.ts'
 import { ChannelDetails, VideoDetails } from '../../types/videos.d.ts'
 
@@ -32,7 +32,7 @@ export default function VideosPage(
   } = channel
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>Juanse | Videos</title>
         <meta name='title' content='Juanse | Videos' />
         <meta
@@ -44,8 +44,8 @@ export default function VideosPage(
           ogURL='https://juanse.dev/sobre-mi'
           title='Sobre Juanse'
         />
-      </BaseHead>
-      <BaseBody pathname='/videos'>
+      </Head>
+      <Document pathname='/videos'>
         <Container>
           <div class='mt-12 grid place-content-center'>
             <div class='flex items-center gap-6 flex-wrap flex-col text-center sm:flex-row sm:text-left'>
@@ -96,7 +96,7 @@ export default function VideosPage(
             />
           </div>
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

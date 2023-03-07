@@ -1,12 +1,12 @@
 import { Handlers, PageProps } from '$fresh/server.ts'
-import BaseBody from '../components/BaseBody.tsx'
-import BaseHead from '../components/BaseHead.tsx'
+import Document from '../layouts/Document.tsx'
+import Head from '../layouts/Head.tsx'
 import BaseOG from '../components/BaseOG.tsx'
-import Container from '../components/Container.tsx'
+import Container from '../layouts/Container.tsx'
 import PostComponent from '../components/HomePost.tsx'
-import PostsGrid from '../components/PostsGrid.tsx'
+import PostsGrid from '../layouts/PostsGrid.tsx'
 import Title from '../components/Title.tsx'
-import VideosGrid from '../components/VideosGrid.tsx'
+import VideosGrid from '../layouts/VideosGrid.tsx'
 import { getLatestVideos } from '../services/youtubev3.ts'
 import { Post } from '../types/posts.d.ts'
 import { VideoDetails } from '../types/videos.d.ts'
@@ -34,7 +34,7 @@ export default function Home(props: PageProps<HomeProps>) {
 
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>Juanse | Programación y Desarrollo Web</title>
         <meta name='title' content='Juanse | Programación y Desarrollo Web' />
         <meta
@@ -43,8 +43,8 @@ export default function Home(props: PageProps<HomeProps>) {
         />
         <link rel='canonical' href='https://juanse.dev' />
         <BaseOG />
-      </BaseHead>
-      <BaseBody pathname='/'>
+      </Head>
+      <Document pathname='/'>
         <Container>
           <div class='my-12'>
             <Title size='5xl'>BLOG</Title>
@@ -70,7 +70,7 @@ export default function Home(props: PageProps<HomeProps>) {
             <VideosGrid videos={videos} displayNumber={4} />
           </div>
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

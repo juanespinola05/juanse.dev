@@ -1,8 +1,8 @@
 import { FunctionalComponent } from 'preact'
-import BaseHead from '../components/BaseHead.tsx'
-import BaseBody from '../components/BaseBody.tsx'
+import Head from '../layouts/Head.tsx'
+import Document from '../layouts/Document.tsx'
 import BaseOG from '../components/BaseOG.tsx'
-import Container from '../components/Container.tsx'
+import Container from '../layouts/Container.tsx'
 import Title from '../components/Title.tsx'
 import IconMail from 'tabler-icon/mail.tsx'
 import IconLinkedIn from 'tabler-icon/brand-linkedin.tsx'
@@ -12,7 +12,7 @@ import Text from '../components/Text.tsx'
 const ContactPage: FunctionalComponent = () => {
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>Juanse | Contacto</title>
         <meta name='title' content='Juanse | Contacto' />
         <meta
@@ -21,8 +21,8 @@ const ContactPage: FunctionalComponent = () => {
         />
         <link rel='canonical' href='https://juanse.dev/contacto' />
         <BaseOG title='Juanse | Contacto' ogURL='https://juanse.dev/contacto' />
-      </BaseHead>
-      <BaseBody>
+      </Head>
+      <Document>
         <Container>
           <div className='mt-12 flex flex-col gap-12 text-center'>
             <Title size='5xl'>CONTACTO</Title>
@@ -59,7 +59,7 @@ const ContactPage: FunctionalComponent = () => {
             </div>
           </div>
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

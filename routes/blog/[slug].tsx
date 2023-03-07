@@ -1,9 +1,9 @@
 import { Handlers, PageProps } from '$fresh/server.ts'
 import { css } from 'twind/css'
 import { tw } from 'twind'
-import BaseBody from '../../components/BaseBody.tsx'
-import BaseHead from '../../components/BaseHead.tsx'
-import Container from '../../components/Container.tsx'
+import Head from '../../layouts/Head.tsx'
+import Document from '../../layouts/Document.tsx'
+import Container from '../../layouts/Container.tsx'
 import { Post } from '../../types/posts.d.ts'
 import { loadPost } from '../../utils/post.ts'
 import PostNavigation from '../../islands/PostNavigations.tsx'
@@ -35,7 +35,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
   }))
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>{post.title}</title>
         <link
           rel='stylesheet'
@@ -56,8 +56,8 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
           image={post.ogUrl}
           type={'article'}
         />
-      </BaseHead>
-      <BaseBody pathname='/blog'>
+      </Head>
+      <Document pathname='/blog'>
         <Container>
           <ShareModal
             text={post.title}
@@ -94,7 +94,7 @@ export default function PagePost(props: PageProps<{ post: Post }>) {
             </div>
           </article>
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

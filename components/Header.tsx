@@ -1,6 +1,6 @@
 import { FunctionalComponent } from 'preact'
 import { PathnameProps } from '../types.d.ts'
-import Container from './Container.tsx'
+import Container from '../layouts/Container.tsx'
 import { Logo } from './Logo.tsx'
 import Navbar from './Navbar.tsx'
 

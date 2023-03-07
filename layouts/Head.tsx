@@ -1,9 +1,9 @@
 import { FunctionalComponent } from 'preact'
-import { Head } from '$fresh/runtime.ts'
+import { Head as RuntimeHead } from '$fresh/runtime.ts'
 
-const BaseHead: FunctionalComponent = ({ children }) => {
+const Head: FunctionalComponent = ({ children }) => {
   return (
-    <Head>
+    <RuntimeHead>
       {children}
       <link rel='preconnect' href='https://fonts.googleapis.com' />
       <link
@@ -17,8 +17,8 @@ const BaseHead: FunctionalComponent = ({ children }) => {
       />
       <meta name='author' content='Juan Sebastian Espinola' />
       <meta name='theme-color' content='#010137' />
-    </Head>
+    </RuntimeHead>
   )
 }
 
-export default BaseHead
+export default Head

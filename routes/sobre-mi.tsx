@@ -1,7 +1,7 @@
 import { FunctionalComponent } from 'preact'
-import BaseHead from '../components/BaseHead.tsx'
-import BaseBody from '../components/BaseBody.tsx'
-import Container from '../components/Container.tsx'
+import Head from '../layouts/Head.tsx'
+import Document from '../layouts/Document.tsx'
+import Container from '../layouts/Container.tsx'
 import Title from '../components/Title.tsx'
 import Text from '../components/Text.tsx'
 import ListOfProjects from '../components/ListOfProjects.tsx'
@@ -22,7 +22,7 @@ const list = {
 const AboutMePage: FunctionalComponent = () => {
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>Sobre Juanse</title>
         <meta name='title' content='Sobre Juanse' />
         <meta
@@ -34,8 +34,8 @@ const AboutMePage: FunctionalComponent = () => {
           ogURL='https://juanse.dev/sobre-mi'
           title='Sobre Juanse'
         />
-      </BaseHead>
-      <BaseBody pathname='/sobre-mi'>
+      </Head>
+      <Document pathname='/sobre-mi'>
         <Container>
           <div class='my-12 flex flex-col gap-12 font-default max-w-xl mx-auto'>
             <div className='font-oswald text-center'>
@@ -100,7 +100,7 @@ const AboutMePage: FunctionalComponent = () => {
             </div>
           </div>
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

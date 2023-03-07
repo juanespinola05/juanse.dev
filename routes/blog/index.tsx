@@ -1,8 +1,8 @@
 import { Handlers, PageProps } from '$fresh/server.ts'
-import BaseBody from '../../components/BaseBody.tsx'
-import BaseHead from '../../components/BaseHead.tsx'
+import Document from '../../layouts/Document.tsx'
+import Head from '../../layouts/Head.tsx'
 import BaseOG from '../../components/BaseOG.tsx'
-import Container from '../../components/Container.tsx'
+import Container from '../../layouts/Container.tsx'
 import PageKeypad from '../../components/PageKeypad.tsx'
 import PostComponent from '../../components/Post.tsx'
 import { loadPostsByPage, PostsPagination } from '../../utils/post.ts'
@@ -24,7 +24,7 @@ export default function BlogPage(props: PageProps<PostsPagination>) {
 
   return (
     <>
-      <BaseHead>
+      <Head>
         <title>Juanse | Blog</title>
         <meta name='title' content='Juanse | Blog' />
         <meta
@@ -36,15 +36,15 @@ export default function BlogPage(props: PageProps<PostsPagination>) {
           ogURL={`https://juanse.dev/blog`}
           title='Juanse | Blog'
         />
-      </BaseHead>
-      <BaseBody pathname='/blog'>
+      </Head>
+      <Document pathname='/blog'>
         <Container>
           <div class='my-12 grid grid-cols(1 md:2 lg:3) gap-6'>
             {posts.map((post) => <PostComponent {...post} />)}
           </div>
           <PageKeypad totalPages={totalPages} currentPage={currentPage} />
         </Container>
-      </BaseBody>
+      </Document>
     </>
   )
 }

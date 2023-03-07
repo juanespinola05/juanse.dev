@@ -1,5 +1,5 @@
 import { FunctionalComponent } from 'preact'
-import Container from './Container.tsx'
+import Container from '../layouts/Container.tsx'
 import Navbar from './Navbar.tsx'
 import Text from './Text.tsx'
 

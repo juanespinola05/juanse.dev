@@ -1,6 +1,6 @@
 import { FunctionalComponent } from 'preact'
 import { VideoDetails } from '../types/videos.d.ts'
-import Video from './Video.tsx'
+import Video from '../components/Video.tsx'
 
 interface VideosGridProps {
   videos: VideoDetails[]
