@@ -15,7 +15,7 @@ const PageKeypad: FunctionalComponent<PageKeyPadProps> = (
         return (
           <a
             href={path}
-            class={`block px-3 py-2 bg-pink shadow-md ${
+            class={`block rounded-md px-3 py-2 bg-pink shadow-md ${
               isCurrent ? 'bg-transparent border-pink border-2' : ''
             }`}
           >

@@ -32,13 +32,13 @@ const HomePost: FunctionalComponent<PostComponentProps> = ({
       class={postStyles}
     >
       <div
-        class={`w-full rounded-xl bg-darkBlue ${aspectRatio}`}
+        class={`w-full rounded-md bg-darkBlue ${aspectRatio}`}
       >
         <img
           src={imageUrl}
           alt={title}
           loading='lazy'
-          className={`${aspectRatio} w-full h-full bg-cover bg-center rounded-xl shadow-xl transition-transform`}
+          className={`${aspectRatio} w-full h-full bg-cover bg-center rounded-md shadow-xl transition-transform`}
         />
       </div>
       <div class='flex flex-col justify-around gap-2 max-w-[415px]'>

@@ -11,7 +11,7 @@ const ProjectWrapper: FunctionalComponent<ProjectWrapperProps> = (
   { children, image, name },
 ) => {
   return (
-    <article class='max-w-md rounded-xl shadow-2xl overflow-hidden'>
+    <article class='max-w-md rounded-md shadow-2xl overflow-hidden'>
       <img src={image} alt={name} loading='lazy' />
       <div class='h-8 px-2 py-1 bg-gray-800'>
         <ul class='flex gap-2 font-default items-center justify-center'>
