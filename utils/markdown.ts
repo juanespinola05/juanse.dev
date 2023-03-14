@@ -1,18 +1,20 @@
 import { extract } from 'https://deno.land/std@0.170.0/encoding/front_matter/any.ts'
-import { Post, PostFrontMatter } from '../types/posts.d.ts'
+import { Post } from '../types/posts.d.ts'
 import { render } from 'deno-gfm'
 
 const POSTS_PER_PAGE = 6
 
-export const loadPost = async (id: Post['id']): Promise<Post | null> => {
+export async function loadFile<T>(
+  id: string,
+  content: string,
+): Promise<T | null> {
   let raw: string
   try {
-    raw = await Deno.readTextFile(`./content/posts/${id}.md`)
+    raw = await Deno.readTextFile(`./content/${content}/${id}.md`)
   } catch {
     return null
   }
-
-  const { attrs, body } = extract<PostFrontMatter>(raw)
+  const { attrs, body } = extract<T>(raw)
   return {
     ...attrs,
     body: render(body),
@@ -20,18 +22,20 @@ export const loadPost = async (id: Post['id']): Promise<Post | null> => {
   }
 }
 
-export const loadPosts = async (): Promise<Post[]> => {
+export async function loadFiles<T>(
+  content: string,
+): Promise<T[]> {
   const promises = []
-  for await (const entry of Deno.readDir('./content/posts')) {
+  for await (const entry of Deno.readDir(`./content/${content}`)) {
     const { name } = entry
     const [id] = name.split('.')
-    const post = await loadPost(id)
-    if (post) promises.push(post)
+    const fileData = await loadFile<T>(id, content)
+    if (fileData) promises.push(fileData)
   }
 
-  const posts = await Promise.all(promises)
+  const files = await Promise.all(promises)
 
-  return posts
+  return files
 }
 
 export interface PostsPagination {
@@ -45,7 +49,7 @@ export const loadPostsByPage = async (
 ): Promise<PostsPagination> => {
   const url = new URL(requestUrl)
   const page = url.searchParams.get('page') || 1
-  const posts = await loadPosts()
+  const posts = await loadFiles<Post>('posts')
   posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   // calculate amount of pages from posts.length

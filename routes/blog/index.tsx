@@ -5,7 +5,7 @@ import BaseOG from '../../components/BaseOG.tsx'
 import Container from '../../layouts/Container.tsx'
 import PageKeypad from '../../components/PageKeypad.tsx'
 import PostComponent from '../../components/Post.tsx'
-import { loadPostsByPage, PostsPagination } from '../../utils/post.ts'
+import { loadPostsByPage, PostsPagination } from '../../utils/markdown.ts'
 
 export const handler: Handlers = {
   async GET(request, context) {

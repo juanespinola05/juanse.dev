@@ -10,12 +10,12 @@ import VideosGrid from '../layouts/VideosGrid.tsx'
 import { getLatestVideos } from '../services/youtubev3.ts'
 import { Post } from '../types/posts.d.ts'
 import { VideoDetails } from '../types/videos.d.ts'
-import { loadPosts } from '../utils/post.ts'
+import { loadFiles } from '../utils/markdown.ts'
 
 export const handler: Handlers = {
   async GET(__, context) {
     const videos = await getLatestVideos(10)
-    const posts = await loadPosts()
+    const posts = await loadFiles<Post>('posts')
     posts.sort((a, b) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
     )

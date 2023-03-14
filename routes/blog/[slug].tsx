@@ -5,7 +5,7 @@ import Head from '../../layouts/Head.tsx'
 import Document from '../../layouts/Document.tsx'
 import Container from '../../layouts/Container.tsx'
 import { Post } from '../../types/posts.d.ts'
-import { loadPost } from '../../utils/post.ts'
+import { loadFile } from '../../utils/markdown.ts'
 import PostNavigation from '../../islands/PostNavigations.tsx'
 import TagList from '../../components/TagList.tsx'
 // TODO: make this dinamic?
@@ -18,7 +18,7 @@ import ShareModal from '../../islands/ShareModal.tsx'
 export const handler: Handlers = {
   async GET(request, context): Promise<Response> {
     const { slug } = context.params
-    const post = await loadPost(slug)
+    const post = await loadFile<Post>(slug, 'posts')
 
     if (!post) return context.renderNotFound()
     return context.render({ post })
