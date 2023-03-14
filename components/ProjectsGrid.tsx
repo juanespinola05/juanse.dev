@@ -3,10 +3,10 @@ import { tw } from 'twind'
 import { css } from 'twind/css'
 import { projectsGrid } from '../utils/styles.ts'
 import ProjectCard from './Project.tsx'
-import { ProjectFrontMatter } from '../types/projects.d.ts'
+import { Project } from '../types/projects.d.ts'
 
 interface IProps {
-  projects: ProjectFrontMatter[]
+  projects: Project[]
 }
 
 const ProjectsGrid: FunctionalComponent<IProps> = ({ projects }) => {
