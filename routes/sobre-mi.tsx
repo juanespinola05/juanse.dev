@@ -1,3 +1,4 @@
+import { Handlers, PageProps } from '$fresh/server.ts'
 import { FunctionalComponent } from 'preact'
 import Head from '../layouts/Head.tsx'
 import Document from '../layouts/Document.tsx'
@@ -6,6 +7,8 @@ import Title from '../components/Title.tsx'
 import Text from '../components/Text.tsx'
 import ListOfProjects from '../components/ListOfProjects.tsx'
 import BaseOG from '../components/BaseOG.tsx'
+import { Project } from '../types/projects.d.ts'
+import { loadFiles } from '../utils/markdown.ts'
 
 const list = {
   'JavaScript': '#9BB848',
@@ -19,7 +22,20 @@ const list = {
   'Educación': '#ff9900',
 }
 
-const AboutMePage: FunctionalComponent = () => {
+export const handler: Handlers = {
+  async GET(__, context) {
+    const projects = await loadFiles<Project>('projects')
+    return context.render({ projects })
+  },
+}
+
+interface AboutMeProps {
+  projects: Project[]
+}
+
+const AboutMePage: FunctionalComponent<PageProps<AboutMeProps>> = (
+  { data: { projects } },
+) => {
   return (
     <>
       <Head>
@@ -41,7 +57,7 @@ const AboutMePage: FunctionalComponent = () => {
             <div className='font-oswald text-center'>
               <Title size='5xl'>SOBRE MI</Title>
             </div>
-            <Text size='base'>
+            <Text size='lg'>
               ¡Hola! Mi nombre es{' '}
               <span class='font-bold text-yellow-300'>Juan Sebas</span>{' '}
               y soy un apasionado del desarrollo web. Mi blog y portafolio están
@@ -94,9 +110,9 @@ const AboutMePage: FunctionalComponent = () => {
             </ul>
           </div>
           <div className='font-oswald text-center'>
-            <Title size='3xl'>PROYECTOS ACTIVOS</Title>
-            <div class='flex flex-wrap justify-center mt-12 mb-28 gap-3'>
-              <ListOfProjects />
+            <Title size='3xl'>PROYECTOS</Title>
+            <div class=''>
+              <ListOfProjects projects={projects} />
             </div>
           </div>
         </Container>
