@@ -1,9 +1,10 @@
 import { Handlers } from '$fresh/server.ts'
-import { loadPosts } from '../../../utils/post.ts'
+import { Post } from '../../../types/posts.d.ts'
+import { loadFiles } from '../../../utils/markdown.ts'
 
 export const handler: Handlers = {
   async GET(req): Promise<Response> {
-    const posts = await loadPosts()
+    const posts = await loadFiles<Post>('posts')
     const reqURL = new URL(req.url)
     const { searchParams } = reqURL
 

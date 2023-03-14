@@ -1,5 +1,5 @@
 import { FunctionalComponent } from 'https://esm.sh/v102/preact@10.11.0/src/index'
-import { PostsPagination } from '../utils/post.ts'
+import { PostsPagination } from '../utils/markdown.ts'
 
 interface PageKeyPadProps extends Omit<PostsPagination, 'posts'> {}
 
