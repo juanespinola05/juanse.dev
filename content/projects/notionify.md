@@ -21,7 +21,7 @@ partir de una selfie.
 Para crear tu avatar personalizado con Notionify, sigue estos sencillos pasos:
 
 - Abre la aplicación Notionify desde tu navegador:
-  (Notionify)[https://notionify.vercel.app].
+  [Notionify](https://notionify.vercel.app).
 - Tómate una selfie o selecciona una foto de tu galería.
 - Notionify analizará tu foto y generará un avatar al estilo de Notion que
   reflejará tus detalles.
@@ -46,7 +46,7 @@ Para crear tu avatar personalizado con Notionify, sigue estos sencillos pasos:
 
 Este proyecto comenzó con un MVP que fue entregado con fecha límite ya que se
 usó para participar en la hackathon organizada por MiduDev y Cloudinary en
-conjunto
+conjunto.
 
 ### Despliegue
 
