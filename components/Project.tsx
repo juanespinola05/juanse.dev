@@ -17,7 +17,7 @@ const ProjectCard: FunctionalComponent<IProps> = ({
   )
   return (
     <a
-      href={`/sobre-mi/${id}`}
+      href={`/projects/${id}`}
       class={`font-default bg-blue-900 bg-opacity-30 rounded-md shadow-lg relative overflow-hidden grid transition-transform hover:scale-105 hover:cursor-pointer ${decorationTransparent}`}
     >
       <Image
