@@ -47,7 +47,7 @@ const HomePost: FunctionalComponent<PostComponentProps> = ({
         </Title>
         <TagList tags={tags} />
         <div data-type='excerpt'>
-          <Text className='font-light'>
+          <Text className='font-default'>
             {excerpt}
           </Text>
         </div>
