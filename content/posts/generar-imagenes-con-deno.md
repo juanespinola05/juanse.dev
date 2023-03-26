@@ -14,12 +14,13 @@ iconUrl: '/posts/deno.webp'
 Recientemente estuve en búsqueda de una librería con la que poder generar
 imágenes de forma automatizada para desplegar una API con Deno. Encontré varias
 opciones y después de probarlas, terminé eligiendo
-[ImageScript](https://https://deno.land/x/imagescript).
-<br><br> ImageScript es una librería súper liviana ya que no tiene ninguna
-dependencia y utiliza métodos de Web Assembly para codificar y descodificar los
-binarios de las imágenes. El resultado de esto es una API que además de ser
-amigagle y entendible, es muy rápida y eficiente. Ideal para cualquier tarea en
-la que necesitemos automatizar el proceso de crear imágenes.
+[ImageScript](https://deno.land/x/imagescript).
+<br><br> <b>ImageScript</b> es una librería súper liviana ya que no tiene
+ninguna dependencia y utiliza métodos de Web Assembly para codificar y
+descodificar los binarios de las imágenes. El resultado de esto es una API que
+además de ser amigagle y entendible, es muy <b>rápida y eficiente</b>. Ideal
+para cualquier tarea en la que necesitemos automatizar el proceso de crear
+imágenes.
 <br><br> A continuación, una mini guía por varios de los métodos que están
 disponibles, junto con un ejemplo final aplicando algunos de estos en una API
 con Deno Fresh 💛.
@@ -36,11 +37,11 @@ dependencia, e instanciarla. Creemos el archivo `template.ts` como plantilla:
 import { Image } from 'https://deno.land/x/imagescript@1.2.15/mod.ts'
 
 // Establecemos las medidas de nuestro lienzo
-const POLAROID_HEIGHT = 800
-const POLAROID_WIDTH = 900
+const HEIGHT = 800
+const WIDTH = 900
 
 // Instanciamos nuestra imagen con las medidas
-const template = new Image(POLAROID_WIDTH, POLAROID_HEIGHT)
+const template = new Image(WIDTH, HEIGHT)
 
 // Creamos una función con el método clone()
 export default function createImage() {
@@ -480,8 +481,8 @@ consultas consultas.
 
 ## Generador de imágenes Polaroid
 
-Para que puedas explorar, cree este ejemplo para crear imagenes polaroid! Super
-sencillo.
+Para que puedas explorar, usé Deno Fresh para mostrar este ejemplo: crear
+imagenes polaroid! Super sencillo.
 
 - Deploy: [generate-polaroid.deno.dev](https://generate-polaroid.deno.dev/)
 - Repositorio:
