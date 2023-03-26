@@ -18,7 +18,7 @@ opciones y después de probarlas, terminé eligiendo
 <br><br> <b>ImageScript</b> es una librería súper liviana ya que no tiene
 ninguna dependencia y utiliza métodos de Web Assembly para codificar y
 descodificar los binarios de las imágenes. El resultado de esto es una API que
-además de ser amigagle y entendible, es muy <b>rápida y eficiente</b>. Ideal
+además de ser amigable y entendible, es muy <b>rápida y eficiente</b>. Ideal
 para cualquier tarea en la que necesitemos automatizar el proceso de crear
 imágenes.
 <br><br> A continuación, una mini guía por varios de los métodos que están
