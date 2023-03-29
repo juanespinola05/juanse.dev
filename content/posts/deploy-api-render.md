@@ -142,11 +142,12 @@ Una vez que hayas creado tu cuenta, te dirigis a la sección
 [Dashboard](https://dashboard.render.com/). Allí, clicamos en `New +` y
 seleccionamos la opción `Web Service`
 
-<video src="/posts/render-new-service.webm" loading="lazy" loop muted autoPlay></video>
+<video src="/posts/render-new-service.webm" loading="lazy" poster="/posts/render-new-service.webp" loop muted autoPlay></video>
 
 Seleccionamos nuestro repositorio y clicamos en `Connect`
 
-<video src="/posts/render-connect-repo.webm" loading="lazy" loop muted autoPlay></video>
+<video src="/posts/render-connect-repo.webm" loading="lazy"
+poster="/posts/render-connect-repo.webp loop muted autoPlay></video>
 
 Vamos a rellenar la información de la siguiente forma:
 

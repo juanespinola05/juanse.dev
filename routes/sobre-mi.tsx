@@ -83,6 +83,7 @@ const AboutMePage: FunctionalComponent<PageProps<AboutMeProps>> = (
             <video
               class='w-full rounded-md shadow-2xl'
               src='presentation.webm'
+              poster='presentation.webp'
               loop
               autoPlay
               muted
