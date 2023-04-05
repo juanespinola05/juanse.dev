@@ -1,17 +1,17 @@
 import { FunctionalComponent, JSX } from 'preact'
-import { ProjectFrontMatter } from '../types/projects.d.ts'
+import { Project } from '../types/projects.d.ts'
 import ProjectsGrid from './ProjectsGrid.tsx'
 
 const PROJECTS_PER_GRID = 6
 
 interface IProps {
-  projects: ProjectFrontMatter[]
+  projects: Project[]
 }
 
 const ListOfProjects: FunctionalComponent<IProps> = (
   { projects },
 ) => {
-  const foo = projects.length / PROJECTS_PER_GRID // todo: put this in constant
+  const foo = projects.length / PROJECTS_PER_GRID
   const gridCount = Array.from({
     length: foo === 0 ? foo : Math.ceil(foo),
   })
