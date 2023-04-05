@@ -25,7 +25,7 @@ const ProjectCard: FunctionalComponent<IProps> = ({
         src={image}
         alt={name}
       />
-      <div class='bg-black bg-opacity-70 z-10 text-left p-4'>
+      <div class='bg-black bg-opacity-50 z-10 text-left p-4'>
         <h3 class='lg:text-base text-gray-300'>{name}</h3>
         <p class='text-3xl lg:text-2xl font-bold'>{excerpt}</p>
         <p className='absolute bottom-6 right-6 underline lg:hidden text-lg'>
