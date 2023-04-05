@@ -4,13 +4,16 @@ import { FunctionalComponent, JSX } from 'preact'
 import { Project } from '../types/projects.d.ts'
 import Image from './Image.tsx'
 
-interface IProps extends Project {}
+interface IProps extends Project {
+  className?: string
+}
 
 const ProjectCard: FunctionalComponent<IProps> = ({
   image,
   name,
   excerpt,
   id,
+  className = '',
 }) => {
   const decorationTransparent = tw(
     css({ '&:hover h3': { 'text-decoration': 'underline' } }),
@@ -18,14 +21,14 @@ const ProjectCard: FunctionalComponent<IProps> = ({
   return (
     <a
       href={`/projects/${id}`}
-      class={`font-default bg-blue-900 bg-opacity-30 rounded-md shadow-lg relative overflow-hidden grid transition-transform hover:scale-105 hover:cursor-pointer ${decorationTransparent}`}
+      class={`font-default bg-blue-900 bg-opacity-30 rounded-md shadow-lg relative overflow-hidden grid transition-transform hover:scale-105 hover:cursor-pointer ${decorationTransparent} ${className}`}
     >
       <Image
         class='absolute top-0 left-0 w-full h-full object-cover object-center'
         src={image}
         alt={name}
       />
-      <div class='bg-black bg-opacity-70 z-10 text-left p-4'>
+      <div class='bg-black bg-opacity-50 z-10 text-left p-4'>
         <h3 class='lg:text-base text-gray-300'>{name}</h3>
         <p class='text-3xl lg:text-2xl font-bold'>{excerpt}</p>
         <p className='absolute bottom-6 right-6 underline lg:hidden text-lg'>

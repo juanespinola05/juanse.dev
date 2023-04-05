@@ -35,7 +35,7 @@ const Navbar: FunctionalComponent<PathnameProps> = ({ pathname }) => {
   }))
   return (
     <nav class='border(b-2 [rgba(255,255,255,0.5)]) py-2'>
-      <ul class='flex gap-4'>
+      <ul class='flex gap-4 justify-center'>
         {routes.map(({ name, path }) => (
           <li key={path}>
             <a
