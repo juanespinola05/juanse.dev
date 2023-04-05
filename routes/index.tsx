@@ -47,13 +47,12 @@ export default function Home(props: PageProps<HomeProps>) {
       <Document pathname='/'>
         <Container>
           <div class='my-12'>
-            <Title size='5xl'>BLOG</Title>
+            <PostsGrid>
+              {posts.filter((_, i) => i < 4).map((post) => (
+                <PostComponent {...post} />
+              ))}
+            </PostsGrid>
           </div>
-          <PostsGrid>
-            {posts.filter((_, i) => i < 4).map((post) => (
-              <PostComponent {...post} />
-            ))}
-          </PostsGrid>
           <hr class='border-b-2 border-gray-600 mt-12' />
           <div className='my-12'>
             <Title size='5xl'>VIDEOS</Title>
