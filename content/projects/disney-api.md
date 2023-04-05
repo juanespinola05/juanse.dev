@@ -6,4 +6,5 @@ description: Notionify es una aplicación innovadora y divertida que utiliza tec
 image: https://i.imgur.com/S92i4MB.jpg
 sourceCode: https://github.com/juanespinola05/disney-api
 excerpt: API REST de personajes y films de Disney! Testing.
+featured: false
 ---

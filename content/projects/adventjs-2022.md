@@ -6,4 +6,5 @@ description: Notionify es una aplicación innovadora y divertida que utiliza tec
 image: https://i.imgur.com/N50ziSB.jpg
 sourceCode: https://github.com/juanespinola05/adventjs-solutions-2022
 excerpt: 'Retos de JavaScript y TypeScript solucionados en vivo.'
+featured: true
 ---
