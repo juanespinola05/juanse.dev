@@ -24,11 +24,16 @@ const Post: FunctionalComponent<PostComponentProps> = ({
     grid-cols(1 sm:2 md:1)
     auto-rows-min
   `
+  const postHover = tw(css({
+    '&:hover div h2': {
+      textDecoration: 'underline',
+    },
+  }))
   const aspectRatio = tw(css({ 'aspect-ratio': '16/9' }))
   return (
     <a
       href={`/blog/${id}`}
-      class={postStyles}
+      class={`${postStyles} ${postHover}`}
     >
       <div
         class={`w-full rounded-md bg-darkBlue ${aspectRatio}`}
