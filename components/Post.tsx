@@ -34,6 +34,7 @@ const Post: FunctionalComponent<PostComponentProps> = ({
     <a
       href={`/blog/${id}`}
       class={`${postStyles} ${postHover}`}
+      title={title}
     >
       <div
         class={`w-full rounded-md bg-darkBlue ${aspectRatio}`}
@@ -49,19 +50,21 @@ const Post: FunctionalComponent<PostComponentProps> = ({
         <Title size='lg'>
           {title}
         </Title>
-        <TagList tags={tags} />
+        {/* <TagList tags={tags} /> */}
         <div data-type='excerpt'>
           <Text className='font-light'>
             {excerpt}
           </Text>
         </div>
-        <div className='flex justify-between'>
+        {
+          /* <div className='flex justify-between'>
           <div class='flex items-center gap-1'>
             <IconClock size={20} />
             <Text size='xs'>{readingTime}</Text>
           </div>
           <DateText date={date} className='font-bold' />
-        </div>
+        </div> */
+        }
       </div>
     </a>
   )
