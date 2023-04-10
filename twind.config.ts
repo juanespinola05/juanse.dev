@@ -10,6 +10,7 @@ export default {
       css({
         '&': {
           backgroundColor: '#010137',
+          fontDisplay: 'swap',
         },
         '&::before, &::after': {
           position: 'fixed',
