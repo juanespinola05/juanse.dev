@@ -17,7 +17,7 @@ const routes = [
     path: '/videos',
   },
   {
-    name: 'Sobre mi',
+    name: 'Sobre mí',
     path: '/sobre-mi',
   },
   {
