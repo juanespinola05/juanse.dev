@@ -6,6 +6,7 @@ description: Ayuda a los usuarios a calcular su balance mensual, establecer un l
 image: https://i.imgur.com/zmw8285.jpg
 sourceCode: https://github.com/juanespinola05/BotIngreso
 excerpt: Discord bot para estudiantes ingresantes de la UNLP.
+featured: false
 ---
 
 # R-Info: Un bot de Discord para ingresantes de Informática UNLP (2021)

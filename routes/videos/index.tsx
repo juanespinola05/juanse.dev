@@ -53,7 +53,7 @@ export default function VideosPage(
                 <img
                   src='/youtube-profile.webp'
                   alt={title}
-                  class='rounded-full border-4 border-red-600 p-2 w-64 h-64'
+                  class='rounded-full border-4 p-2 w-64 h-64'
                 />
               </a>
               <div>

@@ -6,4 +6,5 @@ description: Ayuda a los usuarios a calcular su balance mensual, establecer un l
 image: https://i.imgur.com/kkfhXya.png
 sourceCode: https://github.com/juanespinola05/t-finance-front
 excerpt: API REST de T-Finance para crear tu propia aplicación.
+featured: false
 ---

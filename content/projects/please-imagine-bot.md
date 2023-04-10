@@ -6,6 +6,7 @@ description: Ayuda a los usuarios a calcular su balance mensual, establecer un l
 image: https://i.imgur.com/r5l47jR.jpg
 sourceCode: https://github.com/juanespinola05/pleaseimagine-bot
 excerpt: Discord bot con sistema de tickets y feedback para equipo de desarrolladores y diseñadores en Discord.
+featured: false
 ---
 
 # Please Imagine Bot: Bot de discord para comunidad de diseño y desarrollo

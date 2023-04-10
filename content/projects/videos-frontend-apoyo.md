@@ -6,6 +6,7 @@ description: Descubre los videos cortos de apoyo que he creado para el curso de 
 sourceCode: https://github.com/juanespinola05/sicos
 image: https://i.imgur.com/zn8XJwL.jpg
 excerpt: Videos cortos de apoyo para curso de Diseño Web.
+featured: false
 ---
 
 # Videos de Apoyo para el Curso de Diseño Web y Programación desde Cero
