@@ -7,6 +7,7 @@ image: https://i.imgur.com/D0Ba6dT.png
 sourceCode: https://github.com/juanespinola05/weather-vue
 excerpt: 'Aplicación del clima hecha con Vue.js'
 featured: false
+publish_date: '2023-4-30'
 ---
 
 Mi aplicación del clima fue creada como parte de mi proceso de aprendizaje de
