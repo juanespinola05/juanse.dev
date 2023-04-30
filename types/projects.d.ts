@@ -9,6 +9,7 @@ export interface Project {
   body: string
   id: string
   featured: boolean
+  publish_date?: Date
 }
 
 export interface ProjectFrontMatter extends Omit<Project, 'body' | 'id'> {}

@@ -14,9 +14,10 @@ import * as $7 from './routes/sitemap.xml.ts'
 import * as $8 from './routes/sobre-mi.tsx'
 import * as $9 from './routes/videos/index.tsx'
 import * as $$0 from './islands/CopyButton.tsx'
-import * as $$1 from './islands/PostNavigations.tsx'
-import * as $$2 from './islands/ScrollToTop.tsx'
-import * as $$3 from './islands/ShareModal.tsx'
+import * as $$1 from './islands/NotificactionModal.tsx'
+import * as $$2 from './islands/PostNavigations.tsx'
+import * as $$3 from './islands/ScrollToTop.tsx'
+import * as $$4 from './islands/ShareModal.tsx'
 
 const manifest = {
   routes: {
@@ -33,9 +34,10 @@ const manifest = {
   },
   islands: {
     './islands/CopyButton.tsx': $$0,
-    './islands/PostNavigations.tsx': $$1,
-    './islands/ScrollToTop.tsx': $$2,
-    './islands/ShareModal.tsx': $$3,
+    './islands/NotificactionModal.tsx': $$1,
+    './islands/PostNavigations.tsx': $$2,
+    './islands/ScrollToTop.tsx': $$3,
+    './islands/ShareModal.tsx': $$4,
   },
   baseUrl: import.meta.url,
   config,

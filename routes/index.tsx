@@ -12,6 +12,7 @@ import { VideoDetails } from '../types/videos.d.ts'
 import { loadFiles } from '../utils/markdown.ts'
 import ProjectCard from '../components/Project.tsx'
 import { Project } from '../types/projects.d.ts'
+import Notifications from '../components/Notifications.tsx'
 
 export const handler: Handlers = {
   async GET(__, context) {
@@ -22,7 +23,12 @@ export const handler: Handlers = {
       new Date(b.date).getTime() - new Date(a.date).getTime()
     )
     const featuredProjects = projects.filter((p) => p.featured)
-    return context.render({ posts, videos, projects: featuredProjects })
+    return context.render({
+      posts,
+      videos,
+      projects,
+      featuredProjects,
+    })
   },
 }
 
@@ -30,11 +36,12 @@ interface HomeProps {
   posts: Post[]
   videos: VideoDetails[]
   projects: Project[]
+  featuredProjects: Project[]
 }
 
 export default function Home(props: PageProps<HomeProps>) {
   const { data } = props
-  const { posts, videos, projects } = data
+  const { posts, videos, projects, featuredProjects } = data
 
   return (
     <>
@@ -49,6 +56,7 @@ export default function Home(props: PageProps<HomeProps>) {
         <BaseOG />
       </Head>
       <Document pathname='/'>
+        <Notifications projects={projects} posts={posts} />
         <Container>
           <div class='my-4'>
             <h2 class='text-4xl text-uppercase font-oswald mb-4'>
@@ -66,7 +74,7 @@ export default function Home(props: PageProps<HomeProps>) {
               Proyectos destacados
             </h2>
             <PostsGrid>
-              {projects.slice(0, 3).map((data) => (
+              {featuredProjects.slice(0, 3).map((data) => (
                 <ProjectCard className='min-h-[300px]' {...data} />
               ))}
             </PostsGrid>
