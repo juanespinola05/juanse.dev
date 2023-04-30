@@ -63,13 +63,12 @@ const AboutMePage: FunctionalComponent<PageProps<AboutMeProps>> = (
               y soy un apasionado del desarrollo web. Mi blog y portafolio están
               diseñados para compartir mi conocimiento y experiencia en este
               mundo, así como para ayudar a otros a aprender y crecer en su
-              carrera. Me encanta{' '}
+              carrera. Disfruto{' '}
               <span class='font-bold text-pink-600'>
-                crear y compartir contenido educativo
-              </span>. Siempre estoy buscando nuevas formas ayudar a otros a
-              alcanzar sus metas en programación. Soy una persona con mucho
-              potencial, siempre estoy buscando aprender y desarrollarme, busco
-              dar lo mejor de mi en cada proyecto.
+                creando y compartiendo ese tipo de contenido
+              </span>. Soy una persona con mucho potencial, siempre estoy
+              buscando aprender y desarrollarme, busco dar lo mejor de mi en
+              cada proyecto.
               <br />
               <br />
               Me encanta investigar y experimentar con nuevas tecnologías. En
