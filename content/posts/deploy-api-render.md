@@ -147,7 +147,7 @@ seleccionamos la opción `Web Service`
 Seleccionamos nuestro repositorio y clicamos en `Connect`
 
 <video src="/posts/render-connect-repo.webm" loading="lazy"
-poster="/posts/render-connect-repo.webp loop muted autoPlay></video>
+poster="/posts/render-connect-repo.webp" loop muted autoPlay></video>
 
 Vamos a rellenar la información de la siguiente forma:
 
