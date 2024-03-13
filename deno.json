@@ -1,22 +1,38 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
   },
-  "importMap": "./import_map.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "fmt": {
-    "options": {
-      "singleQuote": true,
-      "indentWidth": 2,
-      "semiColons": false
-    }
+    "options": { "singleQuote": true, "indentWidth": 2, "semiColons": false }
   },
   "lint": {
     "rules": {
-      "exclude": ["no-empty-interface"]
+      "exclude": ["no-empty-interface"],
+      "tags": ["fresh", "recommended"]
     }
-  }
+  },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.6.5/",
+    "preact": "https://esm.sh/preact@10.19.2",
+    "preact/": "https://esm.sh/preact@10.19.2/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "twind": "https://esm.sh/twind@0.16.17",
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "tabler-icon": "https://deno.land/x/tabler_icons_tsx@0.0.2",
+    "tabler-icon/": "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/",
+    "deno-gfm": "https://deno.land/x/gfm@0.6.0/mod.ts",
+    "prismjs/components/": "https://esm.sh/prismjs@1.27.0/components/",
+    "fresh_seo/": "https://deno.land/x/fresh_seo@0.2.1/",
+    "std": "https://deno.land/std@0.176.0",
+    "std/": "https://deno.land/std@0.176.0/",
+    "@twind/core": "https://esm.sh/@twind/core@1.1.3",
+    "@twind/preset-tailwind": "https://esm.sh/@twind/preset-tailwind@1.1.4/",
+    "@twind/preset-autoprefix": "https://esm.sh/@twind/preset-autoprefix@1.0.7/"
+  },
+  "exclude": ["**/_fresh/*"]
 }
