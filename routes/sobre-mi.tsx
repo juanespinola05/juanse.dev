@@ -15,11 +15,15 @@ const list = {
   'Typescript': '#48B8AA',
   'Next.JS': '#B84848',
   'Node.js': '#bffcfb',
+  'Docker': '#0db7ed',
   'Deno': '#f5f52e',
   'Crear contenido': '#e7378a',
+  'SRE': '#ff0040',
   'Desarrollo Web': '#a44366',
-  'Tomar mate': '#00beff',
+  'Linux': '#f5f5f5',
+  'Tomar mate': '#008000',
   'Educación': '#ff9900',
+  'Nginx': '#009639',
 }
 
 export const handler: Handlers = {
